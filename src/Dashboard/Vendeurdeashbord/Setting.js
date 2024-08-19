@@ -1,15 +1,13 @@
 import React, { useState } from "react";
 import "./Settings.css";
 
-
 export default function Settings() {
-  
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [message, setMessage] = useState("");
- 
+
   const user = JSON.parse(localStorage.getItem("userr"));
   const userId = user._id;
 
@@ -32,7 +30,7 @@ export default function Settings() {
       }
     } catch (error) {
       console.error("Error updating profile:", error);
-      setMessage("An error occurred while updating profile.");
+      setMessage("حدث خطأ أثناء تحديث الملف الشخصي.");
     }
   };
 
@@ -56,15 +54,13 @@ export default function Settings() {
       }
     } catch (error) {
       console.error("Error changing password:", error);
-      setMessage("An error occurred while changing password.");
+      setMessage("حدث خطأ أثناء تغيير كلمة المرور.");
     }
   };
 
- 
-
   return (
     <div className="settings-container">
-      <h2>{('settings')}</h2>
+      <h2>الإعدادات</h2>
       {message && (
         <p className={message.includes("error") ? "error" : "success"}>
           {message}
@@ -72,9 +68,9 @@ export default function Settings() {
       )}
 
       <form onSubmit={handleUpdateProfile} className="settings-form">
-        <h3>{('updateProfile')}</h3>
+        <h3>تحديث الملف الشخصي</h3>
         <div className="form-group">
-          <label htmlFor="name">{('name')}</label>
+          <label htmlFor="name">الاسم</label>
           <input
             type="text"
             id="name"
@@ -84,7 +80,7 @@ export default function Settings() {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="email">{('email')}</label>
+          <label htmlFor="email">البريد الإلكتروني</label>
           <input
             type="email"
             id="email"
@@ -94,14 +90,14 @@ export default function Settings() {
           />
         </div>
         <button type="submit" className="submit-button">
-          {('updateProfile')}
+          تحديث الملف الشخصي
         </button>
       </form>
 
       <form onSubmit={handleChangePassword} className="settings-form">
-        <h3>{('changePassword')}</h3>
+        <h3>تغيير كلمة المرور</h3>
         <div className="form-group">
-          <label htmlFor="currentPassword">{('currentPassword')}</label>
+          <label htmlFor="currentPassword">كلمة المرور الحالية</label>
           <input
             type="password"
             id="currentPassword"
@@ -111,7 +107,7 @@ export default function Settings() {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="newPassword">{('newPassword')}</label>
+          <label htmlFor="newPassword">كلمة المرور الجديدة</label>
           <input
             type="password"
             id="newPassword"
@@ -121,11 +117,9 @@ export default function Settings() {
           />
         </div>
         <button type="submit" className="submit-button">
-          {('changePassword')}
+          تغيير كلمة المرور
         </button>
       </form>
-
-     
     </div>
   );
 }

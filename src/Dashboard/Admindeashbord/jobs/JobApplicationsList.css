@@ -1,0 +1,36 @@
+.job-applications-list {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+  }
+  
+  .applications-table {
+    margin-top: 2rem;
+    overflow-x: auto;
+  }
+  
+  .job-applications-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+  }
+  
+  .job-applications-list th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .job-applications-list th {
+    background-color: #f4f4f4;
+  }
+  
+  .job-applications-list a {
+    color: #1a73e8;
+    text-decoration: none;
+  }
+  
+  .job-applications-list a:hover {
+    text-decoration: underline;
+  }
+  

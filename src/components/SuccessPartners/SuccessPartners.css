@@ -1,0 +1,36 @@
+/* SuccessPartners.css */
+.partners-section {
+    padding: 40px 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+  }
+  
+  .partners-section h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .partners-slider .partner-card {
+    padding: 10px;
+  }
+  
+  .partner-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .partner-image:hover {
+    transform: scale(1.05);
+  }
+  
+  .partner-name {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+  }
+  

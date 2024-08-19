@@ -51,35 +51,48 @@ export default function FAQs() {
 
     const faqsList = [
         {
-            q: "What are some random questions to ask?",
-            a: "That's exactly the reason we created this random question generator. There are hundreds of random questions to choose from so you're able to find the perfect random question."
+            q: "خدمات منصة طور نفسك غير واضحة بالنسبة إلي، الرجاء التوضيح؟",
+            a: "نوفر لك منصة طور نقسك خدمات تقدم عبر األنترنيت لمستخدمي االنرتنت الراغبون:- في حتسني املستوى التعليمي عن بعد للموظفني.- يف التكوين عن طريق دورات تعليمية يف خمتلف اجملاالت والتخصصات للجميع عن بعد لكل مستخدمي االنرتنت.- توفر للمرتبص واملتمهن ضمان احلصول على الرتبص دون عناء التنقل وتضييع الوقت واجلهد يف البحث عن املؤسسات املكونةكل ما تحتاجه هو جهاز كمبيوتر وهاتف محمول وأنترنيت للبدء بالتعلم والتكوين، عن بعد. كما ويمكنك التسجيل مجانا عبر الضغط على موقعنا االلكتروني .w"
         },
         {
-            q: "Do you include common questions?",
-            a: "This generator doesn't include most common questions. The thought is that you can come up with common questions on your own so most of the questions in this generator."
+            q: "من يمكنه التسجيل في منصة طور نفسك؟",
+            a: "موظفون دائمون أو متعاقدون، طالب جامعي، تالميذ من معاهد التكوين املهين، متخرجني متحصلني على شهادات، احرار، مؤسسات اقتصادية وعمومية."
         },
         {
-            q: "Can I use this for 21 questions?",
-            a: "Yes! there are two ways that you can use this question generator depending on what you're after. You can indicate that you want 21 questions generated."
+            q: "متى يمكنني التسجيل في منصة طور نفسك؟",
+            a: "متاحة في أي وقت، ألي شخص له الرغبة في التحسين المستمر من نفسه وتطوير قدراته وزيادة مؤهالته مرحبا به"
         },
         {
-            q: "Are these questions for girls or for boys?",
-            a: "The questions in this generator are gender neutral and can be used to ask either male of females (or any other gender the person identifies with)."
+            q: "كيق يمكنني التسجيل في منصة طور نفسك؟",
+            a: "1 قم بإنشاء حساب جديد خاص بك على الموقع .2 فعل حسابك عبر ادخال البريد االلكتروني وكلمة السر الخاصة بك .3 الضغط على انشاء حساب ثم قم بتفعيله ليتمكن من الدخول الى لوحة المعلومات الخاصة بك.4 سجل في أي من الخدمات المتوفرة في المنصة"
         },
         {
-            q: "What do you wish you had more talent doing?",
-            a: "If you've been searching for a way to get random questions, you've landed on the correct webpage. We created the Random Question Generator to ask you as many random questions as your heart desires."
-        }
+            q: "ين أجد رسالة التفعيل؟",
+            a: "يرجى التأكد من تعبئة جميع الخانات في صفحة التسجيل والتأكد من صحتها وباألخص االيميل، بعدها ستصلك رسالة تفعيل على البريد االلكتروني الذي تم تزويده في صفحة التسجيل قم بالضغط على الرابط لتفعيل الحساب، احرص على تفقد صندوق البريد الغير مرغوب به )Spam (ممكن أن تكون وصلت رسالة التفعيل اليه"
+        },
+        {
+            q: " ماذا أفعل اذا نسيت كلمة السر التي استخدمتها إلنشاء حسابي على منصة طور نفسك؟",
+            a: "انقر علىنسيت كلمة السر الموجود أسفل حقل كلمة السر ومن ثم أدخل البريد االلكتروني الخاص بك والذي تم استخدامه عند التسجيل لتلقي رسالة تسمح لك باعادة تعيين كلمة السر الخاص بك"
+        },
+        {
+            q: "ماذا أفعل اذا أردت تغيير اعدادات ومعلومات الحساب على منصة طور نفسك؟",
+            a: "يمكنك الدخول صفحة االعدادات الخاصة بك من خالل الضغط على االسم الخاص بك أعلى الصفحة، ثم ملفي الشخصي ستظهر لك المعلومات األساسية عن حسابك يمكنك تغيير كل المعلومات ما عدا اسم المستخدم"
+        },
+        {
+            q: "ماهي رسوم االشتراك؟",
+            a: "هناك رسوم اشتراكات سنوية وسداسية تختلف حسب الخدمة المقدمة، ستجدها موضحة أمام كل خدمة مقدم"
+
+        },
     ]
   
     return (
         <section className="leading-relaxed max-w-screen-xl mt-12 mx-auto px-4 md:px-8">
             <div className="space-y-3 text-center">
                 <h1 className="text-3xl text-gray-800 font-semibold">
-                    Frequently Asked Questions
+                الاسئلة الشائعة
                 </h1>
                 <p className="text-gray-600 max-w-lg mx-auto text-lg">
-                    Answered all frequently asked questions, Still confused? feel free to contact us.
+                   
                 </p>
             </div>
             <div className="mt-14 max-w-2xl mx-auto">

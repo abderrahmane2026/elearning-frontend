@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./Sellers.css";
+import "./Professor.css";
 
-const Sellers = () => {
+const Mr = () => {
   const [sellers, setSellers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -11,7 +11,7 @@ const Sellers = () => {
     axios
       .get("http://localhost:5000/api/user")
       .then((response) => {
-        const sellers = response.data.filter((user) => user.role === "seller");
+        const sellers = response.data.filter((user) => user.role === "Mr");
         setSellers(sellers);
         setLoading(false);
       })
@@ -22,7 +22,7 @@ const Sellers = () => {
   }, []);
 
   const handleAccept = async (userId) => {
-    if (window.confirm("Are you sure you want to accept this seller?")) {
+    if (window.confirm("Are you sure you want to accept this Professor?")) {
       try {
         await axios.put(`http://localhost:5000/api/user/${userId}/accept`);
         setSellers(
@@ -33,13 +33,13 @@ const Sellers = () => {
           )
         );
       } catch (error) {
-        console.error("Error accepting seller:", error);
+        console.error("Error accepting Professer:", error);
       }
     }
   };
 
   const handleRefuse = async (userId) => {
-    if (window.confirm("Are you sure you want to refuse this seller?")) {
+    if (window.confirm("Are you sure you want to refuse this Professer?")) {
       try {
         await axios.put(`http://localhost:5000/api/user/${userId}/refuse`);
         setSellers(
@@ -50,7 +50,7 @@ const Sellers = () => {
           )
         );
       } catch (error) {
-        console.error("Error refusing seller:", error);
+        console.error("Error refusing Professor:", error);
       }
     }
   };
@@ -65,50 +65,9 @@ const Sellers = () => {
 
   return (
     <div className="users-container">
-      {/* <h2>Sellers</h2>
-      <table className="users-table">
-        <thead>
-          <tr>
-            <th>User ID</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Role</th>
-            <th>Status</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {sellers.map((seller) => (
-            <tr key={seller._id}>
-              <td>{seller._id}</td>
-              <td>{seller.name}</td>
-              <td>{seller.email}</td>
-              <td>{seller.role}</td>
-              <td>{seller.sellerStatus}</td>
-              <td>
-                {seller.sellerStatus === "requested" && (
-                  <>
-                    <button
-                      className="accept-button"
-                      onClick={() => handleAccept(seller._id)}
-                    >
-                      Accept
-                    </button>
-                    <button
-                      className="refuse-button"
-                      onClick={() => handleRefuse(seller._id)}
-                    >
-                      Refuse
-                    </button>
-                  </>
-                )}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table> */}
+   
 
-{/* ggggggggg */}
+
       <div className="users-container">
       <div className="max-w-screen-xl mx-auto px-4 md:px-8">
         <div className="items-start justify-between md:flex">
@@ -168,4 +127,4 @@ const Sellers = () => {
   );
 };
 
-export default Sellers;
+export default Mr;

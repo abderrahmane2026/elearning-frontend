@@ -31,18 +31,7 @@ const OrdersPage = () => {
     }
   };
 
-  const handleAccept = async (orderId) => {
-    try {
-      const response = await axios.put(`http://localhost:5000/api/order/accept/${orderId}`);
-      setOrders(
-        orders.map((order) =>
-          order._id === orderId ? { ...order, status: response.data.status } : order
-        )
-      );
-    } catch (error) {
-      console.error("Error accepting order:", error);
-    }
-  };
+
 
   return (
     <div className="max-w-screen-xl mx-auto px-4 md:px-8">
@@ -54,12 +43,14 @@ const OrdersPage = () => {
           <table className="w-full table-auto text-sm text-left">
             <thead className="bg-gray-50 text-gray-600 font-medium border-b">
               <tr>
-                <th className="py-3 px-6">Name</th>
-                <th className="py-3 px-6">Email</th>
+                <th className="py-3 px-6">الاسم</th>
+                <th className="py-3 px-6">البريد الالكتروني</th>
+
                 
-                <th className="py-3 px-6">Start Time</th>
-                <th className="py-3 px-6">Status</th>
-                <th className="py-3 px-6">Actions</th>
+                <th className="py-3 px-6">وقت الطلب </th>
+                <th className="py-3 px-6"> اختيار</th>
+                <th className="py-3 px-6">الحالة</th>
+                <th className="py-3 px-6">حذف</th>
               </tr>
             </thead>
             <tbody className="text-gray-600 divide-y">
@@ -68,13 +59,14 @@ const OrdersPage = () => {
                   <td className="px-6 py-4 whitespace-nowrap">{order.name}</td>
                   <td className="px-6 py-4 whitespace-nowrap">{order.email}</td>
                   <td className="px-6 py-4 whitespace-nowrap">{order.startTime}</td>
+                  <td className="px-6 py-4 whitespace-nowrap">{order.nameofchois}</td>
                   <td className="px-6 py-4 whitespace-nowrap">{order.status}</td>
                   <td className="text-right px-6 whitespace-nowrap">
                   <button
                       onClick={() => handleDelete(order._id)}
                       className="py-2 px-3 font-medium text-red-600 hover:text-red-500 duration-150 hover:bg-gray-50 rounded-lg"
                     >
-                      Delete
+                      حذف
                     </button>
                    
                   </td>

@@ -68,11 +68,13 @@ function Header() {
               تواصل معنا
             </Nav.Link>
             <NavDropdown className="Navdown" title="خدماتنا" id="basic-nav-dropdown">
-              <NavDropdown.Item as={Link}  to="/Courses">تكوين</NavDropdown.Item>
+              <NavDropdown.Item as={Link}  to="/Courses">دورات تدريبية</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item as={Link}  to="/Internships">تدريب </NavDropdown.Item>
+             
+              <NavDropdown.Item as={Link}  to="/Education"> تحسين المستوى</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item as={Link}  to="/Education">التعليم الذاتي</NavDropdown.Item>
+              <NavDropdown.Item as={Link}  to="/Training">تربص </NavDropdown.Item>
+              <NavDropdown.Divider />
           
             </NavDropdown>
             <NavDropdown className="Navdown" title="المزيد" id="basic-nav-dropdown">

@@ -1,0 +1,55 @@
+.companies-selection {
+    width: 80%;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+.companies-selection h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.companies-selection .companies-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.companies-selection .companies-table th, .companies-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.companies-selection .companies-table th {
+    background-color: #f4f4f4;
+}
+
+.companies-selection .company-image {
+    width: 50px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.companies-selection button {
+    padding: 8px 12px;
+    margin-right: 8px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.companies-selection button:hover {
+    background-color: #0056b3;
+}
+
+.companies-selection .delete-button {
+    background-color: #dc3545;
+}
+
+.companies-selection .delete-button:hover {
+    background-color: #c82333;
+}

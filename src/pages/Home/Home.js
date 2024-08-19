@@ -5,17 +5,19 @@ import FAQs from '../../components/FAQS/FAQS'
 import ContactSection from '../../components/ContactSection/ContactSection'
 import Testimonials from '../../components/Testimonials/Testimonials'
 import Elearning from '../../components/Elearning/Elearning'
+import ReviewPage from '../../components/review/review'
+
 
 export default function Home() {
   return (
     <div>
-     <Hero/>
+     <Hero />
      <ServiceSection/>
      <Elearning/>
      <ContactSection/>
      <FAQs/>
      <Testimonials/>
-
+     <ReviewPage/>
 
     </div>
   )

@@ -13,17 +13,32 @@ export default () => {
                     منصة
                          <span className="text-indigo-600">  تعليمية</span>
                     </h1>
-                    <p className="text-gray-500 max-w-xl mx-auto leading-relaxed">
-                    منصة التكوين والتعليم الرقمي الموثوق
+                    <p className="text-gray-700 max-w-xl mx-auto font-semibold">
+                    منصة تحسين المستوى والتكوين الرقمي
+منصة تعنى بالتكوين الرقمي في جميع المجاالت التخصصات
+تدريب / تربص / التعلم عن بعد
+التكوين من اجل التوظيف والترقية
+
+                      </p>
+
+                      <p className="text-gray-700 max-w-xl mx-auto font-semibold">
+                      منصة التكوين والتعليم الرقمي الموثوق
 رسالتنا ...........التكوين من أجل التوظيف والترقية في منصب العمل 
-رؤيتنا.............التقدم بمستقبل التعليم والتكوين اونالين فنجمع افضل المدرسين، الخبراء، المكونين المتخصصين في مكان واحد                    </p>
+رؤيتنا.............التقدم بمستقبل التعليم والتكوين اونالين فنجمع أفضل المدرسين، الخبراء، المكونين المتخصصين في مكان واحد.
+سجل اآلن.............وطور مهاراتك واحصل على شهادة التي تساعدك في سوق العمل
+                      </p>
+                      <p className="text-gray-800 py-3 text-lg font-semibold">
+                      اطمح، تعلم، تقدم.
+                      قم ببناء مهاراتك العملية من خالل االلتحاق ببرامج تدريبية متطورة،
+                      واكتسب شهادات تساعدك للدخول في سوق العمل وتطوير مسيرتك المهنية
+                        </p>
                 </div>
                 <div className="mt-12 justify-center items-center space-y-3 sm:space-x-6 sm:space-y-0 sm:flex">
-                    <Link href="javascript:void(0)" className="px-10 py-3.5 w-full bg-indigo-600 text-white text-center rounded-md shadow-md block sm:w-auto">
+                    <Link to="/Education" className="px-10 py-3.5 w-full bg-indigo-600 text-white text-center rounded-md shadow-md block sm:w-auto">
                         تحسين المستوى
                     </Link>
-                    <Link href="javascript:void(0)" className="px-10 py-3.5 w-full text-gray-500 text-center border rounded-md duration-300 hover:text-indigo-600 hover:shadow block sm:w-auto">
-                       تعلم
+                    <Link to="/Courses" className="px-10 py-3.5 w-full text-gray-500 text-center border rounded-md duration-300 hover:text-indigo-600 hover:shadow block sm:w-auto">
+                       تعلم الذاتي
                     </Link>
                 </div>
             </section>

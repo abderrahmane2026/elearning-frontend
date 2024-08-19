@@ -41,19 +41,19 @@ export default function UserSidebare() {
         <li>
           <Link to="account">
             <FaUser />
-            {!isCollapsed && ('account')}
+            {!isCollapsed && ('الحساب')}
           </Link>
         </li>
         <li>
           <Link to="settings">
             <FaCog />
-            {!isCollapsed && ('settings')}
+            {!isCollapsed && ('الاعدادات')}
           </Link>
         </li>
         <li>
           <Link to="myOrders">
             <FaCog />
-            {!isCollapsed && ('myOrders')}
+            {!isCollapsed && ('طلباتي')}
           </Link>
         </li>
         <li>
@@ -62,7 +62,7 @@ export default function UserSidebare() {
             window.location.href = '/';
           }}>
             <FaSignOutAlt />
-            {!isCollapsed && ('logout')}
+            {!isCollapsed && ('تسجيل الخروج')}
           </a>
         </li>
       </ul>

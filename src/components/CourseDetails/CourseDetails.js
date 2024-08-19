@@ -1,24 +1,153 @@
-// CourseDetails.js
-import React from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
+import './CourseDetails.css';
 
-const CourseDetails = ({ courses }) => {
-  const { id } = useParams();
-  const course = courses.find((course) => course.id === parseInt(id));
+const CourseDetailsPage = () => {
+  const { id } = useParams(); 
+  const [course, setCourse] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
 
-  if (!course) {
-    return <div>Course not found</div>;
-  }
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [address, setAddress] = useState('');
+  const [phone, setPhone] = useState('');
+  const [paymentMethod, setPaymentMethod] = useState('');
+  const [showOrderForm, setShowOrderForm] = useState(false);
+  const [cvFile, setCvFile] = useState(null);
+
+  const user = JSON.parse(window.localStorage.getItem("userr"));
+  const userId = user?._id;
+
+  useEffect(() => {
+    const fetchCourse = async () => {
+      try {
+        const response = await axios.get(`http://localhost:5000/api/courses/${id}`);
+        setCourse(response.data);
+        setLoading(false);
+      } catch (error) {
+        setError('Error fetching course details');
+        setLoading(false);
+      }
+    };
+
+    fetchCourse();
+  }, [id]);
+
+  const handleSubmitOrder = async (e) => {
+    e.preventDefault();
+    
+    try {
+        const formData = new FormData();
+        formData.append('name', name);
+        formData.append('email', email);
+        formData.append('address', address);
+        formData.append('phone', phone);
+        formData.append('paymentMethod', paymentMethod);
+        formData.append('userId', userId);
+        formData.append('catigory', 'Course');
+        formData.append('nameofchois', course.title);
+        formData.append('cv', cvFile);
+
+        await axios.post('http://localhost:5000/api/order/submit', formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+            },
+        });
+
+        alert('Order submitted successfully!');
+    } catch (error) {
+        alert('Error submitting order: ' + error.message);
+    }
+};
+  
+  const handleEnrollClick = () => {
+    setShowOrderForm(true);
+  };
+
+  if (loading) return <div className="loading">Loading...</div>;
+  if (error) return <div className="error-message">{error}</div>;
 
   return (
-    <div>
-      <h2>{course.title}</h2>
-      <img src={course.image} alt={course.title} />
-      <p>{course.description}</p>
-      <p>Instructor: {course.instructor}</p>
-      <p>Duration: {course.duration}</p>
+    <div className="course-details">
+         <div className="course-content">
+      <img src={course.image} alt={course.title} className="course-image" />
+      <h1 className="course-title">{course.title}</h1>
+      <p className="course-description">{course.description}</p>
+      <p className="course-duration"><strong>التفاصيل:</strong> {course.duration}</p>
+      <p className="course-level"><strong>المستوي:</strong> {course.level}</p>
+      <p className="course-price"><strong>السعر:</strong> دج{course.price}</p>
+     
+      <button className="enroll-button" onClick={handleEnrollClick}>اطلب الان </button>
+
+      {showOrderForm && (
+      <form onSubmit={handleSubmitOrder} className="order-form">
+      <h2>تفاصيل الطلب </h2>
+      <div className="form-group">
+          <label>الاسم:</label>
+          <input 
+              type="text" 
+              value={name} 
+              onChange={(e) => setName(e.target.value)} 
+              required 
+          />
+      </div>
+      <div className="form-group">
+          <label>البريد الالكتروني:</label>
+          <input 
+              type="email" 
+              value={email} 
+              onChange={(e) => setEmail(e.target.value)} 
+              required 
+          />
+      </div>
+      <div className="form-group">
+          <label>الموقع:</label>
+          <input 
+              type="text" 
+              value={address} 
+              onChange={(e) => setAddress(e.target.value)} 
+              required 
+          />
+      </div>
+      <div className="form-group">
+          <label>رقم الهاتف:</label>
+          <input 
+              type="text" 
+              value={phone} 
+              onChange={(e) => setPhone(e.target.value)} 
+              required 
+          />
+      </div>
+      <div className="form-group">
+          <label>طريقة الدفع :</label>
+          <select 
+              value={paymentMethod} 
+              onChange={(e) => setPaymentMethod(e.target.value)} 
+              required
+          >
+              <option value="">اختر طريقة الدفع</option>
+              <option value="Credit Card">البطاقة البنكية</option>
+              <option value="PayPal">باليد</option>
+              <option value="Bank Transfer">تحويل البنكي </option>
+          </select>
+      </div>
+      <div className="form-group">
+          <label> رفع السيرة الذاتية:</label>
+          <input 
+              type="file" 
+              onChange={(e) => setCvFile(e.target.files[0])} 
+              accept=".pdf,.doc,.docx" // قبول فقط ملفات PDF و Word
+              required 
+          />
+      </div>
+      <button type="submit" className="submit-order-button">ارسال الطلب </button>
+  </form>
+      )}
+       </div>
     </div>
   );
 };
 
-export default CourseDetails;
+export default CourseDetailsPage;

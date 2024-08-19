@@ -1,0 +1,41 @@
+/* CompetitionsList.css */
+.competitions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .competition-card {
+    height: 250px;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .competition-image {
+    flex: 1;
+    max-width: 300px;
+  }
+  
+  .competition-image img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .competition-details {
+    flex: 2;
+    padding: 20px;
+  }
+  
+  .competition-details h2 {
+    margin-top: 0;
+  }
+  
+  .competition-details p {
+    margin: 10px 0;
+  }
+  

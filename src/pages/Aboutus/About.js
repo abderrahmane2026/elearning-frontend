@@ -1,22 +1,24 @@
 
 import React, { useState, useEffect } from "react";
+import about from "../../assets/picturs/About us page-bro.png"
+
 export default function About() {
     const stats = [
         {
             data: "35K",
-            title: "Customers"
+            title: "الزوار"
         },
         {
             data: "10K+",
-            title: "Downloads"
+            title: "تسجيل ادخول"
         },
         {
             data: "40+",
-            title: "Countries"
+            title: "الزبائن"
         },
         {
             data: "30M+",
-            title: "Total revenue"
+            title: "التفاعلات"
         },
     ]
     const team = [
@@ -45,6 +47,36 @@ export default function About() {
             twitter: "javascript:void(0)",
         },
     ]
+    const features = [
+        {
+            desc : " ",
+            title : "طالب وطالبات اجلامعة الطالبني للرتبص أو التكوين وهم يزاولون دراستهم سواءا التابعني للمدارس العليا او اجلامعات."
+        },
+        {
+            title: "مؤسسات عمومية اتبعة لوزارة التعليم العايل، التكوين املهين، وزارة الرتبية والتعليم عن طريق عقد اتفاقيات شراكة معهم.",
+            desc: ""
+        },
+        {
+            title: " املؤسسات الناشئة",
+            desc: ""
+        },
+        {
+            title: "الطلبة اجلامعيني املتخرجني واملتحصلون على شهادة.",
+            desc: ""
+        },
+        {
+            title: "طالب املعاهد التابعني لوزارة التكوين املهين.",
+            desc: ""
+        },
+        {
+            title: "طالب التابعني لوزارة الرتبية والتعليم.",
+            desc: ""
+        },
+        {
+            title: "الباحثون عن وظيفة",
+            desc: ""
+        },
+    ]
     
 
     const [isVideoPoppedUp, setVideoPopUp] = useState(false)
@@ -57,21 +89,22 @@ export default function About() {
                    
                     <h1 className="text-4xl text-gray-800 font-extrabold mx-auto md:text-5xl">من نحن </h1>
                     <p className="max-w-xl mx-auto xl:mx-0">
-                    منصة طور نفسك هي بيئة توفر العلم و العمل من اجل تشجيع االبتكار، التعلم، والتكوين الميداني والعلمي، وذلك من خالل توفير برامج تدريب وتأهيل عالية الجودة المستوى تساعد على اكتساب مهارات 
-                    وخبرات وتطوير قدرات من طرف أفضل األستاذة متخصصين، خبراء، مكونين، ومدربين في مجاالت متعددة وباحترافية عالية .....................................يسرنا انضمامكم لنا.
-                    </p>
+                    منصة الكرتونية تشجع التعلم املستمر وتطوير املهارات بطريقة سهلة ومرنة وأبسعار مناسبة.
+تقدم خدمات تعليمية رقمية خمصصة لتحسني مستوى املوظفني من طرف أساتذة دائمني، متقاعدين ذوي خربات وكفاءات، يعملون بساعات اضافية مع احلصول على شهادة،
+توفر للمرتبص واملتمهن ضمان احلصول على الرتبص وهم يزاولون دراستهم ومساعدهتم حنو حتقيق أهدافهم وبناء مستقبلهم وذلك بتقدمي طلب التوظيف.
+تقدمي حمتوى تعليمي غين ومتميز من خالل دورات تعليمية جمانية أو مدفوعة عرب املنصة تغطي جمموعة متنوعة من اجملاالت العلمية واملهنية.
+تساعد على اكتساب املعرفة، املهارات و اخلربات وتطوير قدرات من طرف أفضل األساتذة املتخصصني، خرباء، مكونني، ومدربني يف خمتلف اجملاالت والتخصصات وابحرتافية عالية.
+
+
+                   </p>
+                   <h1 className="text-4xl text-gray-800 font-extrabold mx-auto md:text-5xl">يسرنا انضمامكم لنا </h1>
                    
                 </div>
                 <div className="flex-1 max-w-xl mx-auto mt-14 xl:mt-0">
                     <div className="relative">
-                        <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" className="rounded-lg" alt="" />
-                        <button className="absolute w-16 h-16 rounded-full inset-0 m-auto duration-150 bg-blue-500 hover:bg-blue-600 ring-offset-2 focus:ring text-white"
-                            onClick={() => setVideoPopUp(true)}
-                        >
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-6 h-6 m-auto">
-                                <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
-                            </svg>
-                        </button>
+                        <img src={about} className="rounded-lg" alt="" />
+                       
+                            
                     </div>
                 </div>
             </div>
@@ -96,6 +129,45 @@ export default function About() {
                 ) : ""
             }
         </section>
+        {/* ggggggggggg */}
+
+        <section className="py-14">
+            <div className="max-w-screen-xl mx-auto px-4 text-gray-600 md:px-8">
+                <div className="max-w-xl space-y-3">
+                    <h3 className="text-indigo-600 font-semibold">
+                    من يمكنه
+                    </h3>
+                    <p className="text-gray-800 text-3xl font-semibold sm:text-4xl">
+                     الاستفادة من منصة التكوين وتحسين المستوى؟
+                    </p>
+                    <p>
+                    .أنت أي ًضا قادر على تحقيق أهدافك معنا
+
+                    </p>
+                </div>
+                <div className="mt-12">
+                    <ul className="grid gap-y-8 gap-x-12 sm:grid-cols-2 lg:grid-cols-3">
+                        {
+                            features.map((item, idx) => (
+                                <li key={idx} className="space-y-3">
+                                    <div className="w-12 h-12 border text-indigo-600 rounded-lg flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                        </svg>
+                                    </div>
+                                    <h4 className="text-lg text-gray-800 font-semibold">
+                                        {item.title}
+                                    </h4>
+                                    <p>
+                                        {item.desc}
+                                    </p>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+            </div>
+        </section>
          <section className="mt-2 mx-auto max-w-screen-xl pb-4 px-4 items-center lg:flex md:px-8">
          <div className="space-y-4 flex-1 sm:text-center lg:text-left">
              <h1 className="text-gray-800 font-bold text-4xl xl:text-5xl">
@@ -107,7 +179,7 @@ export default function About() {
              " اجعل من كل يوم فرصة لتحسين نفسك والتقدم نحو أحالمك، وال تدع الفرص تفوتك"             </p>
              <div>
                  <p className="text-gray-800 py-3">
-                     Subscribe to our newsletter and we'll save your time
+                 اكتشف فرصا مثيرة وانطلق بمستقبلك الى افاق جديدة.
                  </p>
                 
              </div>
@@ -125,14 +197,22 @@ export default function About() {
                     </div>
                     <div className="max-w-xl px-4 space-y-3 mt-6 sm:px-0 md:mt-0 lg:max-w-2xl">
                         <h3 className="text-indigo-600 font-semibold">
-                        من نحن
+                        هنا تبدأ رحلتك من العلم إلى العمل
                         </h3>
                         <p className="text-gray-800 text-3xl font-semibold sm:text-4xl">
-                            Build your SaaS solution with help from our experts
+                        تم انشاء منصة طور نفسك للتعليم والتنمية والتي تحرص على بذل كافة الجهود والمساعي 
                         </p>
                         <p className="mt-3 text-gray-600">
-                        منصة طور نفسك هي بيئة توفر العلم و العمل من اجل تشجيع االبتكار، التعلم، والتكوين الميداني والعلمي، وذلك من خالل توفير برامج تدريب وتأهيل عالية الجودة المستوى تساعد على اكتساب مهارات 
-                        وخبرات وتطوير قدرات من طرف أفضل األستاذة متخصصين، خبراء، مكونين، ومدربين في مجاالت متعددة وباحترافية عالية .....................................يسرنا انضمامكم لنا.                        </p>
+                        اكتشف
+مجموعة كبيرة ومتنوعة من أكثر الدورات والتخصصات كفاءة وجودة
+التحق
+باحد البرامج لتنضم الى مجتمع من المتعلمين الراغبين بالتطور، مثلك تماما.
+تعلم
+مع أكثر المدربين كفاءة لتصقل مهاراتك المهنية والعملية
+التفاعل والمشاركة من خالل النقاش والتخاطب التعلمي بين الطالب والمدرسين
+احصل على شهادة معتمدة
+لتعزز فرصك في إطالق مسيرتك المهنية، تنميتها وتطويرها.
+                             </p>
                        
                     </div>
                 </div>
@@ -142,7 +222,7 @@ export default function About() {
             <div className="max-w-screen-xl mx-auto px-4 text-center md:px-8">
                 <div className="max-w-xl mx-auto">
                     <h3 className="text-gray-800 text-3xl font-semibold sm:text-4xl">
-                        Meet our team
+                       فريق العمل
                     </h3>
                     <p className="text-gray-600 mt-3">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy.
@@ -188,10 +268,10 @@ export default function About() {
                 <div className="mt-6 gap-12 sm:mt-0 md:flex lg:block">
                     <div className="max-w-2xl">
                         <h3 className="text-gray-800 text-3xl font-semibold sm:text-4xl">
-                            We do our best to make customers always happy
+                        نحن نبذل قصارى جهدنا لإسعاد العملاء دائمًا                        
                         </h3>
                         <p className="mt-3 max-w-xl">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi venenatis sollicitudin quam ut tincidunt.
+                           
                         </p>
                     </div>
                     <div className="flex-none mt-6 md:mt-0 lg:mt-6">

@@ -14,7 +14,7 @@ export default function ContactSection() {
                 </svg>
             ,
             contact: "Algeria, Constantine",
-            title: ('Our office')
+            title: ('الموقع الخاص بنا')
         },
         {
             icon:
@@ -23,7 +23,7 @@ export default function ContactSection() {
                 </svg>
             ,
             contact: "+213 (555) 000-000",
-            title: ('Phone')
+            title: ('رقم الهاتف')
         },
         {
             icon:
@@ -32,7 +32,7 @@ export default function ContactSection() {
                 </svg>
             ,
             contact: "example@gmail.com",
-            title: ('Email')
+            title: ('البريد الالكتروني')
         },
     ];
 
@@ -42,13 +42,14 @@ export default function ContactSection() {
                 <div className="max-w-screen-xl mx-auto px-4 text-gray-600 md:px-8">
                     <div className="max-w-xl space-y-3">
                         <h3 className="text-indigo-600 font-semibold">
-                            {('Contact')}
+                            {('تواصل معنا')}
                         </h3>
                         <p className="text-gray-800 text-3xl font-semibold sm:text-4xl">
-                            {('Let us know how we can help')}
+                        {("نرحب بتواصلكم مع منصة طور نفسك وسنرد عليكم في أسرع وقت ممكن")}
                         </p>
                         <p>
-                            {("We’re here to help and answer any question you might have, We look forward to hearing from you.")}
+                           
+                            {(' إذا كان لديك مشكلة أو استفسار يرجى البحث أولا في مركز المساعدة و الاسئلة الشائعة')}
                         </p>
                     </div>
                     <div>

@@ -39,37 +39,71 @@ export default function AdminSidebare() {
         <li>
           <Link to="account">
             <FaUser />
-            {!isCollapsed && ('account')}
+            {!isCollapsed && ('الحساب')}
           </Link>
         </li>
         <li>
           <Link to="users">
             <FaUser />
-            {!isCollapsed && ('users')}
+            {!isCollapsed && ('المستخدمون')}
+          </Link>
+        </li>
+        <li>
+          <Link to="Mr">
+            <FaUser />
+            {!isCollapsed && ('الاساتذة')}
+          </Link>
+        </li>
+        <li>
+          <Link to="orderstudent">
+            <FaUser />
+            {!isCollapsed && ('طلبات البحث عن تربص')}
+          </Link>
+        </li>
+        <li>
+          <Link to="educationlist">
+            <FaUser />
+            {!isCollapsed && ('طلبات تحسين المستوى')}
           </Link>
         </li>
         <li>
           <Link to="AddCompany">
             <FaBoxOpen />
-            {!isCollapsed && ('AddCompany')}
+            {!isCollapsed && ('اضافة شركة تربص')}
+          </Link>
+        </li>
+        
+       
+        <li>
+          <Link to="AllCompanies">
+            <FaBoxOpen />
+            {!isCollapsed && ('كل الشركات')}
           </Link>
         </li>
         <li>
-          <Link to="ServiceControl">
+          <Link to="JobsList">
             <FaBoxOpen />
-            {!isCollapsed && ('serviceControl')}
+            {!isCollapsed && ('قايمة طلبات العمل')}
           </Link>
         </li>
+        
+        <li>
+          <Link to="CompanyOrders">
+            <FaBoxOpen />
+            {!isCollapsed && ('طلبات التربص')}
+          </Link>
+        </li>
+       
         <li>
           <Link to="settings">
             <FaCog />
-            {!isCollapsed && ('settings')}
+            {!isCollapsed && ('الاعدادات')}
           </Link>
         </li>
         <li>
           <Link to="reports">
             <FaMessage />
-            {!isCollapsed && ('messages')}
+            {!isCollapsed && ('الرسائل')}
           </Link>
         </li>
         <li>
@@ -80,7 +114,7 @@ export default function AdminSidebare() {
             }}
           >
             <FaSignOutAlt />
-            {!isCollapsed && ('logout')}
+            {!isCollapsed && ('تسجيل الخروج')}
           </button>
         </li>
       </ul>

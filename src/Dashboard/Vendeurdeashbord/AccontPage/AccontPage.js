@@ -99,7 +99,7 @@ const AccountPage = () => {
 
   return (
     <div className="account-page">
-      <h1>Profile</h1>
+      <h1>الملف الشخصي</h1>
       {userData && (
         <div className="profile-info">
           <div className="profile-image">
@@ -107,13 +107,13 @@ const AccountPage = () => {
               typeof formData.avatar === "string" ? (
                 <img
                   src={formData.avatar}
-                  alt="Profile"
+                  alt="الملف الشخصي"
                   className="profile-picture"
                 />
               ) : (
                 <img
                   src={URL.createObjectURL(formData.avatar)}
-                  alt="Profile"
+                  alt="الملف الشخصي"
                   className="profile-picture"
                 />
               )
@@ -122,7 +122,7 @@ const AccountPage = () => {
             )}
             {editMode && (
               <label htmlFor="avatar" className="custom-file-upload">
-                Upload Image
+                تحميل صورة
               </label>
             )}
             <input
@@ -139,39 +139,39 @@ const AccountPage = () => {
             <h2>{userData.name}</h2>
             {editMode ? (
               <div className="edit-fields">
-                <label htmlFor="phoneNumber">Phone Number:</label>
+                <label htmlFor="phoneNumber">رقم الهاتف:</label>
                 <input
                   type="number"
                   name="phoneNumber"
                   value={formData.phoneNumber}
-                  placeholder="Phone Number"
+                  placeholder="رقم الهاتف"
                   onChange={handleChange}
                 />
-                <label htmlFor="address">Address:</label>
+                <label htmlFor="address">العنوان:</label>
                 <input
                   type="text"
                   name="address"
                   value={formData.address}
-                  placeholder="Address"
+                  placeholder="العنوان"
                   onChange={handleChange}
                 />
-                <label htmlFor="dateOfBirth">Date of Birth:</label>
+                <label htmlFor="dateOfBirth">تاريخ الميلاد:</label>
                 <input
                   type="date"
                   name="dateOfBirth"
                   value={formData.dateOfBirth}
-                  placeholder="Date of Birth"
+                  placeholder="تاريخ الميلاد"
                   onChange={handleChange}
                 />
-                <button onClick={handleSave}>Save</button>
+                <button onClick={handleSave}>حفظ</button>
               </div>
             ) : (
               <>
-                <p>Email: {userData.email}</p>
-                <p>Phone Number: {userData.phoneNumber}</p>
-                <p>Address: {userData.address}</p>
-                <p>Date of Birth: {userData.dateOfBirth}</p>
-                <button onClick={handleEdit}>Edit</button>
+                <p>البريد الإلكتروني: {userData.email}</p>
+                <p>رقم الهاتف: {userData.phoneNumber}</p>
+                <p>العنوان: {userData.address}</p>
+                <p>تاريخ الميلاد: {userData.dateOfBirth}</p>
+                <button onClick={handleEdit}>تعديل</button>
               </>
             )}
           </div>

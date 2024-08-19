@@ -1,69 +1,51 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+import { FaMapMarkerAlt } from 'react-icons/fa'; // Import location icon
+import "./Internships.css"
+const CompaniesList = () => {
+    const [companies, setCompanies] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState('');
 
-const CompanyList = () => {
-  const [companies, setCompanies] = useState([]);
-  const [contractedCompanies, setContractedCompanies] = useState([]);
-  const [nonContractedCompanies, setNonContractedCompanies] = useState([]);
+    useEffect(() => {
+        const fetchCompanies = async () => {
+            try {
+                const response = await axios.get('http://localhost:5000/api/companies');
+                setCompanies(response.data);
+                setLoading(false);
+            } catch (err) {
+                setError('Error fetching companies');
+                setLoading(false);
+            }
+        };
 
-  useEffect(() => {
-    const fetchCompanies = async () => {
-      try {
-        const response = await axios.get('/api/companies');
-        setCompanies(response.data);
-        setContractedCompanies(response.data.filter(company => company.isContracted));
-        setNonContractedCompanies(response.data.filter(company => !company.isContracted));
-      } catch (error) {
-        console.error('Error fetching companies:', error);
-      }
-    };
+        fetchCompanies();
+    }, []);
 
-    fetchCompanies();
-  }, []);
+    if (loading) {
+        return <div>Loading...</div>;
+    }
 
-  return (
-    <div>
-      <h1>All Companies</h1>
-      
-      <h2>Contracted Companies</h2>
-      <ul>
-        {contractedCompanies.map(company => (
-          <li key={company._id}>
-            <h3>{company.name}</h3>
-            <p>{company.description}</p>
-            <p>Address: {company.address}</p>
-            <p>Phone: {company.phone}</p>
-            <p>Website: <a href={company.website}>{company.website}</a></p>
-            <h4>Booking Locations</h4>
-            <ul>
-              {company.bookingLocations.map((location, index) => (
-                <li key={index}>{location}</li>
-              ))}
-            </ul>
-          </li>
-        ))}
-      </ul>
+    if (error) {
+        return <div>{error}</div>;
+    }
 
-      <h2>Non-Contracted Companies</h2>
-      <ul>
-        {nonContractedCompanies.map(company => (
-          <li key={company._id}>
-            <h3>{company.name}</h3>
-            <p>{company.description}</p>
-            <p>Address: {company.address}</p>
-            <p>Phone: {company.phone}</p>
-            <p>Website: <a href={company.website}>{company.website}</a></p>
-            <h4>Booking Locations</h4>
-            <ul>
-              {company.bookingLocations.map((location, index) => (
-                <li key={index}>{location}</li>
-              ))}
-            </ul>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
+    return (
+        <div className="companies-list">
+            {companies.map((company) => (
+                <div className="company-card" key={company._id}>
+                    <img src={company.image} alt={company.name} className="company-image" />
+                    <h2>{company.name}</h2>
+                    <h2>{company.price}</h2>
+                    <p><FaMapMarkerAlt /> {company.address}</p>
+                    <Link to={`/companies/${company._id}`}>
+                        <button className="show-more-btn">Show More</button>
+                    </Link>
+                </div>
+            ))}
+        </div>
+    );
 };
 
-export default CompanyList;
+export default CompaniesList;

@@ -1,18 +1,16 @@
 import { Link, useNavigate } from "react-router-dom";
-
-
 import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import axios from "axios";
 import LoadingSubmite from './Loading';
-
 import loginpic from "../../assets/picturs/login.png";
 import "./Login.css";
+
 export default function SignupPage() {
-  
   const [Loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const [err, seterr] = useState(null);
+  const [privacyChecked, setPrivacyChecked] = useState(false); // حالة مربع سياسة الخصوصية
 
   const [values, setValues] = useState({
     name: '',
@@ -26,8 +24,16 @@ export default function SignupPage() {
     setValues(prev => ({ ...prev, [name]: value }));
   };
 
+  const handlePrivacyCheck = (event) => {
+    setPrivacyChecked(event.target.checked);
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
+    if (!privacyChecked) {
+      seterr("يرجى الموافقة على سياسة الخصوصية");
+      return;
+    }
     setLoading(true);
 
     try {
@@ -63,7 +69,6 @@ export default function SignupPage() {
             <div className="row align-items-center">
               <div className="header-text mb-4">
                 <h1>إنشاء حساب</h1>
-               
               </div>
 
               <Form onSubmit={handleSubmit}>
@@ -114,8 +119,20 @@ export default function SignupPage() {
                     required
                   >
                     <option value="client">عميل</option>
-                    <option value="seller">بائع</option>
+                    <option value="Mr">استاذ</option>
                   </select>
+                </div>
+
+                <div className="input-group mb-4 d-flex">
+                  <input 
+                    type="checkbox" 
+                    className="form-check-input" 
+                    id="privacyCheck" 
+                    onChange={handlePrivacyCheck}
+                  />
+                  <label htmlFor="privacyCheck" className="form-check-label text-secondary ms-2">
+                    <small>أوافق على <Link to="/privacy-policy" style={{textDecoration:"none", color:"rgb(79, 70, 229)"}}>سياسة الخصوصية</Link></small>
+                  </label>
                 </div>
 
                 <div className="input-group mb-5 d-flex justify-content-between">
@@ -133,7 +150,14 @@ export default function SignupPage() {
                 </div>
                 
                 <div className="input-group mb-3">
-                  <button style={{ backgroundColor:"rgb(79, 70, 229)", border:"rgba(255, 0, 0, 0.8)"}}  className="btn btn-lg btn-primary w-100 mb-2 fs-6">إنشاء حساب</button>
+                  <button 
+                    style={{ backgroundColor:"rgb(79, 70, 229)", border:"rgba(255, 0, 0, 0.8)"}}  
+                    className="btn btn-lg btn-primary w-100 mb-2 fs-6"
+                    type="submit"
+                    disabled={!privacyChecked} // تعطيل الزر إذا لم يتم التحقق من سياسة الخصوصية
+                  >
+                    إنشاء حساب
+                  </button>
                 </div>
 
                 <div className="err-masseg">

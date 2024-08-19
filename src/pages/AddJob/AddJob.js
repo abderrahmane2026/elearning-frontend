@@ -35,9 +35,9 @@ export default function AddJob() {
     formData.append("email", values.email);
     formData.append("specialization", values.specialization);
     formData.append("cv", values.cv);
-
+  
     try {
-      await axios.post("https://your-backend-url/api/job-application", formData);
+      await axios.post("http://localhost:5000/api/job-application", formData); // Ensure the URL is correct
       setLoading(false);
       setMessage("تم تقديم الطلب بنجاح!");
     } catch (err) {
@@ -46,7 +46,6 @@ export default function AddJob() {
       setMessage("حدث خطأ. حاول مرة أخرى.");
     }
   };
-
   return (
     <main className="flex overflow-hidden">
       <div className="flex-1 hidden lg:block">

@@ -52,12 +52,12 @@ export default function Reports() {
             <thead className="bg-gray-50 text-gray-600 font-medium border-b">
               <tr>
                 <th className="py-3 px-6">ID</th>
-                <th className="py-3 px-6">Name</th>
-                <th className="py-3 px-6">Email</th>
-                <th className="py-3 px-6">Subject</th>
-                <th className="py-3 px-6">Message</th>
-                <th className="py-3 px-6">Date</th>
-                <th className="py-3 px-6">Actions</th>
+                <th className="py-3 px-6">الاسم</th>
+                <th className="py-3 px-6">الريد </th>
+                <th className="py-3 px-6">الهاتف</th>
+                <th className="py-3 px-6">الموضوع</th>
+                <th className="py-3 px-6">التاريخ</th>
+                <th className="py-3 px-6">الحالة</th>
               </tr>
             </thead>
             <tbody className="text-gray-600 divide-y">

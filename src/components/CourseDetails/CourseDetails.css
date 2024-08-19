@@ -1,0 +1,126 @@
+.course-details {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #f4f7f6;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.course-image {
+  width: 300px;
+  height: auto;
+  border-radius: 12px;
+  margin-right: 25px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.course-content {
+  flex: 1;
+}
+
+.course-title {
+  font-size: 2.4rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.course-description {
+  font-size: 1.2rem;
+  color: #34495e;
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.course-duration,
+.course-level,
+.course-price {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+.enroll-button {
+  display: inline-block;
+  background-color: #e74c3c;
+  color: white;
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.enroll-button:hover {
+  background-color: #c0392b;
+  transform: scale(1.05);
+}
+
+.order-form {
+  background-color: #ecf0f1;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 8px;
+  display: block;
+  font-size: 1.1rem;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #bdc3c7;
+  font-size: 1.1rem;
+  color: #2c3e50;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #2980b9;
+  outline: none;
+  box-shadow: 0 0 8px rgba(41, 128, 185, 0.3);
+}
+
+.submit-order-button {
+  background-color: #27ae60;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.submit-order-button:hover {
+  background-color: #229954;
+  transform: scale(1.05);
+}
+
+.loading, .error-message {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #e74c3c;
+  margin-top: 50px;
+}

@@ -10,8 +10,11 @@ export default function Hero() {
                          <span className="text-indigo-600 mt-4"> اختصار الوقت، بيع</span>
                     </h1>
                     <p className="text-gray-500 mt-5 max-w-xl leading-relaxed font-semibold sm:mx-auto lg:ml-0">
-                    عصرنة اإلدارات من خالل جودة الخدمات الرقمية توفير التعليم، التكوين، التربص تحسين وتطوير نظام التعلم والتكوين اختصار الوقت وتقليص المسافات
-                    </p>
+                    عصرنة اإلدارات من خالل جودة اخلدمات الرقمية
+توفري التعليم، التكوين، الرتبص
+حتسني وتطوير نظام التعلم والتكوين
+اختصار الوقت وتقليص املسافات
+بيع دو رات تدريبية وتعليمية                     </p>
                     <div>
                         <p className="text-gray-800 py-3 text-lg font-semibold">
                         من مكان واحد، بسهولة كبيرة
@@ -32,7 +35,8 @@ export default function Hero() {
             </section>
                  <div className="max-w-screen-xl mx-auto px-4 md:px-8 mt-5">
                  <h3 className="font-semibold text-sm text-gray-600 text-center">
-                     TRUSTED BY TEAMS FROM AROUND THE WORLD
+                 نبحث عنك لنصنع معا مستقبل مشرق
+                 " اجعل من كل يوم فرصة لتحسين نفسك والتقدم نحو أحالمك، وال تدع الفرص تفوتك"
                  </h3>
                  <div className="mt-6">
                      <ul className="flex gap-y-6 flex-wrap items-center justify-center [&>*]:px-12 lg:divide-x">
