@@ -37,7 +37,7 @@ const AddLecture = () => {
         };
 
         try {
-            const response = await axios.post('http://localhost:5000/api/lectures', newLecture);
+            const response = await axios.post('https://develop-yourself.onrender.com/api/lectures', newLecture);
             console.log('Lecture created:', response.data);
             // قم بإعادة توجيه المستخدم أو عرض رسالة تأكيد
         } catch (error) {

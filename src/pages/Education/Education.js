@@ -14,7 +14,7 @@ export default function LecturesPage() {
   useEffect(() => {
     const fetchLectures = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/lectures");
+        const response = await axios.get("https://develop-yourself.onrender.com/api/lectures");
         setLectures(response.data);
       } catch (error) {
         console.error("Error fetching lectures", error);

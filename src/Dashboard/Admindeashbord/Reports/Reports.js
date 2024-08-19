@@ -9,7 +9,7 @@ export default function Reports() {
   useEffect(() => {
     const fetchMessages = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/contact/");
+        const response = await axios.get("https://develop-yourself.onrender.com/api/contact/");
         setMessages(response.data);
         setLoading(false);
       } catch (error) {
@@ -23,7 +23,7 @@ export default function Reports() {
 
   const handleDelete = async (messageId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/contact/delete/${messageId}`);
+      await axios.delete(`https://develop-yourself.onrender.com/api/contact/delete/${messageId}`);
       setMessages(messages.filter((message) => message._id !== messageId));
     } catch (error) {
       console.error("Error deleting message:", error);

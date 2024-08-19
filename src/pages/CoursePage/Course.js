@@ -26,7 +26,7 @@ const CoursesPage = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/courses'); // Adjust the URL if needed
+        const response = await axios.get('https://develop-yourself.onrender.com/api/courses'); // Adjust the URL if needed
         setCourses(response.data);
         setLoading(false);
       } catch (error) {

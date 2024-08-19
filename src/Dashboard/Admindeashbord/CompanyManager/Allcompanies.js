@@ -12,7 +12,7 @@ const CompaniesSelection = () => {
     useEffect(() => {
         const fetchCompanies = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/companies');
+                const response = await axios.get('https://develop-yourself.onrender.com/api/companies');
                 setCompanies(response.data);
                 setLoading(false);
             } catch (err) {
@@ -30,7 +30,7 @@ const CompaniesSelection = () => {
 
     const handleDeleteCompany = async (id) => {
         try {
-            await axios.delete(`http://localhost:5000/api/companies/${id}`);
+            await axios.delete(`https://develop-yourself.onrender.com/api/companies/${id}`);
             setCompanies(companies.filter((company) => company._id !== id));
         } catch (err) {
             console.error('Error deleting company:', err);
