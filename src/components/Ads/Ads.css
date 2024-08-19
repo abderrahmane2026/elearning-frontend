@@ -1,0 +1,9 @@
+.partner-ads{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.partner-ads img{
+    width: 400px;
+}

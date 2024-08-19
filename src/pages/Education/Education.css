@@ -1,0 +1,27 @@
+.shop-container {
+    display: flex;
+  }
+  
+  .main-content {
+    margin-left: 250px; /* Same width as the sidebar */
+    padding: 15px;
+    width: 100%;
+  }
+  
+  /* Media Queries */
+  @media screen and (max-width: 768px) {
+    .main-content {
+      margin-left: 200px; /* Adjust margin for smaller sidebar */
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .shop-container {
+      flex-direction: column;
+    }
+  
+    .main-content {
+      margin-left: 0;
+    }
+  }
+  

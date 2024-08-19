@@ -1,0 +1,110 @@
+.internships-page {
+  padding: 20px;
+  text-align: center;
+}
+
+.company-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.company-card {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px;
+  width: 150px;
+  text-align: center;
+}
+
+.show-more-btn {
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.internships-page {
+  padding: 20px;
+  direction: rtl; /* جعل النص من اليمين إلى اليسار */
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.company-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.company-card {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  flex: 1;
+  margin: 0 10px;
+}
+
+.company-card h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.company-card p {
+  font-size: 14px;
+}
+
+.show-more-btn,
+.show-less-btn,
+.submit-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.buttons-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.request-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.submit-btn {
+  width: 100%;
+  background-color: #28a745;
+}

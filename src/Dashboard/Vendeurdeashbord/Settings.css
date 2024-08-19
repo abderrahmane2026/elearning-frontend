@@ -1,0 +1,78 @@
+.settings-container {
+ 
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+ 
+}
+
+.settings-container h2, h3 {
+  text-align: center;
+}
+
+.settings-form {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 80%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.submit-button {
+  width: 200px;
+  padding: 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.submit-button:hover {
+  background-color: darkred;
+}
+
+.error {
+  color: red;
+  text-align: center;
+}
+
+.success {
+  color: green;
+  text-align: center;
+}
+
+.language-selector {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.language-selector h1{
+  margin-bottom: 20px;
+}
+
+.language-button {
+  padding: 10px 20px;
+  margin: 0 5px;
+  background-color: #ddd;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.language-button.active, .language-button:hover {
+  background-color: red;
+  color: white;
+}

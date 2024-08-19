@@ -1,0 +1,128 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f5f5f5;
+}
+
+.account-page {
+  
+  padding: 30px;
+  background-color: #fff;
+  margin: 50px auto; /* Added margin from top */
+ 
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.profile-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #e1e1e1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  border: 2px solid #ee2525; /* Changed border color */
+  margin-right: 20px;
+}
+
+.profile-picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.placeholder {
+  font-size: 50px;
+  color: #bbb;
+}
+
+.profile-details {
+  flex: 1;
+}
+
+.profile-details h2 {
+  margin: 0;
+  font-size: 40px;
+  color: #333;
+}
+
+.profile-details p {
+  font-size: 20px;
+  margin: 5px 0;
+  color: #636363;
+}
+
+.edit-fields {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-fields input {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.edit-fields button {
+  padding: 10px 20px;
+  background-color: #ee2525;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.edit-fields button:hover {
+  background-color: #ee2525; /* Darker shade on hover */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+  .profile-header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-image {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+/* CSS for the custom file upload button */
+.custom-file-upload {
+  background-color: #ee2525;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 100px 100px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.custom-file-upload:hover {
+  background-color: #ee2525;
+}
+
+/* Hide default file input */
+.input-file {
+  display: none;
+}
