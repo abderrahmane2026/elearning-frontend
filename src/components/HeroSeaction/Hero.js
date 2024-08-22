@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Hero() {
   return (
@@ -10,18 +11,18 @@ export default function Hero() {
                          <span className="text-indigo-600 mt-4"> اختصار الوقت، بيع</span>
                     </h1>
                     <p className="text-gray-500 mt-5 max-w-xl leading-relaxed font-semibold sm:mx-auto lg:ml-0">
-                    عصرنة اإلدارات من خالل جودة اخلدمات الرقمية
+                    عصرنة الادارات من خالال جودة الخدمات الرقمية
 توفري التعليم، التكوين، الرتبص
-حتسني وتطوير نظام التعلم والتكوين
+تحسين وتطوير نظام التعلم والتكوين
 اختصار الوقت وتقليص املسافات
-بيع دو رات تدريبية وتعليمية                     </p>
+بيع دورات تدريبية وتعليمية                     </p>
                     <div>
                         <p className="text-gray-800 py-3 text-lg font-semibold">
                         من مكان واحد، بسهولة كبيرة
                         </p>
-                        <button className="outline-none bg-indigo-700 text-white text-center px-4 py-3 rounded-md shadow w-full ring-offset-2 ring-gray-700 focus:ring-2  sm:w-auto">
-                                Subscribe 
-                            </button>
+                        <Link to="/Dashboard" className="outline-none bg-indigo-700 text-white text-center px-4 py-3 rounded-md shadow w-full ring-offset-2 ring-gray-700 focus:ring-2  sm:w-auto">
+                                تسجيل 
+                            </Link>
                         
                            
                            
@@ -36,7 +37,7 @@ export default function Hero() {
                  <div className="max-w-screen-xl mx-auto px-4 md:px-8 mt-5">
                  <h3 className="font-semibold text-sm text-gray-600 text-center">
                  نبحث عنك لنصنع معا مستقبل مشرق
-                 " اجعل من كل يوم فرصة لتحسين نفسك والتقدم نحو أحالمك، وال تدع الفرص تفوتك"
+                 " اجعل من كل يوم فرصة لتحسين نفسك والتقدم نحو أحلامك، ولا تدع الفرص تفوتك"
                  </h3>
                  <div className="mt-6">
                      <ul className="flex gap-y-6 flex-wrap items-center justify-center [&>*]:px-12 lg:divide-x">

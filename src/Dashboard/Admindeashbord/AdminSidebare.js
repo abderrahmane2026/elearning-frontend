@@ -81,6 +81,18 @@ export default function AdminSidebare() {
           </Link>
         </li>
         <li>
+          <Link to="coursesmanager">
+            <FaBoxOpen />
+            {!isCollapsed && ('كل الدورات')}
+          </Link>
+        </li>
+        <li>
+          <Link to="lecturesmanager">
+            <FaBoxOpen />
+            {!isCollapsed && ('كل التخصصات')}
+          </Link>
+        </li>
+        <li>
           <Link to="JobsList">
             <FaBoxOpen />
             {!isCollapsed && ('قايمة طلبات العمل')}

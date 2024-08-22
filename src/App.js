@@ -47,6 +47,8 @@ import OrdersPage from './Dashboard/Userdeashbord/orders/MyOrders';
 import HelpCenterPage from './pages/HelpCenterPage/HelpCenterPage';
 import EducationOrder from './pages/Education/Services/EducationOrder';
 import RequestsList from './Dashboard/Admindeashbord/educationorderlist/educationorderlist';
+import CoursesSelection from './Dashboard/Admindeashbord/Coursemanager/Coursemanager';
+import LecturesSelection from './Dashboard/Admindeashbord/lecturesmanager/lecturesmanager';
 
 function App() {
   const {user} = userContext()
@@ -104,6 +106,7 @@ function App() {
         }>
           
           <Route index element={<AccountPage />} />
+
           <Route path='Account' element={<AccountPage/>}/>
           <Route path='AddLecture' element={<CreateLecturePage/>}/>
           <Route path='AddCourse' element={<AddCourse/>}/>
@@ -114,6 +117,8 @@ function App() {
           <Route path='CourseOrders' element={<CourseOrders/>}/>
           <Route path='CompanyOrders' element={<CompanyOrdersTable/>}/>
           <Route path='LecturesOrders' element={<LecturesOrders/>}/>
+          <Route path='coursesmanager' element={<CoursesSelection/>}/>
+          <Route path='lecturesmanager' element={<LecturesSelection/>}/>
           <Route path='orderstudent' element={<RequestStudent/>}/>
           <Route path="users" element={<Users />} />
           <Route path="reports" element={<Reports/>} />

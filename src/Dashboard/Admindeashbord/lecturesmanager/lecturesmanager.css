@@ -1,0 +1,55 @@
+.lectures-selection {
+    width: 80%;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+.lectures-selection h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.lectures-selection .lectures-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.lectures-selection .lectures-table th, .lectures-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.lectures-selection .lectures-table th {
+    background-color: #f4f4f4;
+}
+
+.lectures-selection .company-image {
+    width: 50px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.lectures-selection button {
+    padding: 8px 12px;
+    margin-right: 8px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.lectures-selection button:hover {
+    background-color: #0056b3;
+}
+
+.lectures-selection .delete-button {
+    background-color: #dc3545;
+}
+
+.lectures-selection .delete-button:hover {
+    background-color: #c82333;
+}

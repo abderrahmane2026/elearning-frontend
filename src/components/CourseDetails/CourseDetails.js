@@ -78,8 +78,12 @@ const CourseDetailsPage = () => {
       <p className="course-duration"><strong>التفاصيل:</strong> {course.duration}</p>
       <p className="course-level"><strong>المستوي:</strong> {course.level}</p>
       <p className="course-price"><strong>السعر:</strong> دج{course.price}</p>
+     <p className="course-description">سجل الان وابدأ رحلتك التعليمية
+     اكتسب مهارات جديدة وتميز في سوق العمل بمهاراتك
      
+     </p>
       <button className="enroll-button" onClick={handleEnrollClick}>اطلب الان </button>
+
 
       {showOrderForm && (
       <form onSubmit={handleSubmitOrder} className="order-form">

@@ -45,7 +45,7 @@ export default function Contact() {
           />
         </svg>
       ),
-      contact: "tawirNafsak@example.com",
+      contact: "tefer1988nadjet@gmail.com",
     },
     {
       icon: (
@@ -64,7 +64,7 @@ export default function Contact() {
           />
         </svg>
       ),
-      contact: "+213 000-000",
+      contact: "+213 673772432",
     },
     {
       icon: (

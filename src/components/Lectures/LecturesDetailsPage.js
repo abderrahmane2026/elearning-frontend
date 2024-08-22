@@ -102,11 +102,27 @@ export default function LectureDetailsPage() {
     <form onSubmit={handleSubmitOrder} className="order-form">
         <h2>تفاصيل الطلب </h2>
         <div className="form-group">
-            <label>الاسم:</label>
+            <label>الاسم و اللقب:</label>
             <input 
                 type="text" 
                 value={name} 
                 onChange={(e) => setName(e.target.value)} 
+                required 
+            />
+        </div>
+        <div className="form-group">
+            <label> رقم التسجيل:</label>
+            <input 
+                type="number" 
+                
+                required 
+            />
+        </div>
+        <div className="form-group">
+            <label> رقم بطاقة التعريف الوطني:</label>
+            <input 
+                type="number" 
+                
                 required 
             />
         </div>
@@ -151,7 +167,7 @@ export default function LectureDetailsPage() {
             </select>
         </div>
         <div className="form-group">
-            <label> رفع السيرة الذاتية:</label>
+            <label> شهادة عمل + شهادة مستوى الدراسي  :</label>
             <input 
                 type="file" 
                 onChange={(e) => setCvFile(e.target.files[0])} 

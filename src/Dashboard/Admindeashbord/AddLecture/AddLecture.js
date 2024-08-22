@@ -95,10 +95,10 @@ const AddLecture = () => {
 
     return (
         <div className="add-lecture-container">
-            <h2 className="form-title">إضافة محاضرة جديدة</h2>
+            <h2 className="form-title">إضافة تخصص جديد</h2>
             <form onSubmit={handleSubmit} className="add-lecture-form">
                 <div className="form-group">
-                    <label>عنوان المحاضرة:</label>
+                    <label>عنوان التخصص:</label>
                     <input
                         type="text"
                         value={title}
@@ -107,7 +107,7 @@ const AddLecture = () => {
                     />
                 </div>
                 <div className="form-group">
-                    <label>صورة المحاضرة:</label>
+                    <label>صورة التخصص:</label>
                     <input
                         type="text"
                         value={image}
@@ -116,7 +116,7 @@ const AddLecture = () => {
                     />
                 </div>
                 <div className="form-group">
-                    <label>سعر المحاضرة:</label>
+                    <label>سعر التخصص:</label>
                     <input
                         type="number"
                         value={price}
@@ -125,7 +125,7 @@ const AddLecture = () => {
                     />
                 </div>
                 <div className="form-group">
-                    <label>تصنيف المحاضرة:</label>
+                    <label>تصنيف التخصص:</label>
                     <select
                         value={category}
                         onChange={(e) => setCategory(e.target.value)}
@@ -139,7 +139,7 @@ const AddLecture = () => {
                     </select>
                 </div>
                 <div className="form-group">
-                    <label>تفاصيل المحاضرة:</label>
+                    <label>تفاصيل التخصص:</label>
                     <textarea
                         value={details}
                         onChange={(e) => setDetails(e.target.value)}
@@ -150,7 +150,7 @@ const AddLecture = () => {
                 {lecturers.map((lecturer, index) => (
                     <div key={index} className="lecturer-group">
                         <div className="form-group">
-                            <label>اسم المحاضر:</label>
+                            <label>اسم ولقب المحاضر:</label>
                             <input
                                 type="text"
                                 value={lecturer.name}
@@ -180,7 +180,7 @@ const AddLecture = () => {
                 <button type="button" className="add-button" onClick={addLecturer}>إضافة محاضر آخر</button>
 
                 <div>
-                    <button type="submit" className="submit-button">إضافة المحاضرة</button>
+                    <button type="submit" className="submit-button">إضافة التخصص</button>
                 </div>
             </form>
         </div>

@@ -34,7 +34,7 @@ const EducationOrder = () => {
             <h2>إضافة طلب</h2>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
-                    <label htmlFor="studentName">اسم الطالب</label>
+                    <label htmlFor="studentName">اسم و اللقب</label>
                     <input
                         type="text"
                         id="studentName"
@@ -44,6 +44,60 @@ const EducationOrder = () => {
                         required
                     />
                 </div>
+                <div className="form-group">
+                    <label htmlFor="studentName">المستوى الدراسي</label>
+                    <select  type="text"           
+                       required
+                       >
+                        <option>ابتدائي</option>
+                        <option>متوسط</option>
+                        <option>ثانوي</option>
+                        <option>جامعي</option>
+                    </select>
+                       
+                    
+                </div>
+                <div className="form-group">
+                    <label htmlFor="studentName">رقم التسجيل </label>
+                    <input
+                        type="number"
+                       
+                       
+                        required
+                    />
+                </div>
+
+                <div className="form-group">
+                    <label htmlFor="studentName">رقم بطاقة التعريف </label>
+                    <input
+                        type="text"                                            
+                        required
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="studentName">العنوان    </label>
+                    <input
+                        type="text"                                            
+                        required
+                    />
+                </div>
+
+                <div className="form-group">
+                    <label htmlFor="studentName">  البريد اللكتروني </label>
+                    <input
+                        type="text"                                            
+                        required
+                    />
+                </div>
+              
+                <div className="form-group">
+                    <label htmlFor="studentName">   رقم الهاتف </label>
+                    <input
+                        type="number"                                            
+                        required
+                    />
+                </div>
+
                 <div className="form-group">
                     <label htmlFor="specialization">التخصص</label>
                     <input
@@ -55,8 +109,9 @@ const EducationOrder = () => {
                         required
                     />
                 </div>
+
                 <div className="form-group">
-                    <label htmlFor="description">وصف الطلب</label>
+                    <label htmlFor="description">وصف الطلب  </label>
                     <textarea
                         id="description"
                         name="description"
@@ -64,6 +119,14 @@ const EducationOrder = () => {
                         onChange={handleChange}
                         required
                     ></textarea>
+                </div>
+
+                 <div className="form-group">
+                    <label htmlFor="studentName">  شهادة عمل + شهادة تثبت  المستوى الدراسي  </label>
+                    <input
+                        type="file"                                            
+                        required
+                    />
                 </div>
                 <button type="submit">إرسال الطلب</button>
             </form>
