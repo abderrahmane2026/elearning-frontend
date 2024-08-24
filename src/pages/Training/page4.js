@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./page4.css"; // Import the CSS file for styling
-
+import { toast, ToastContainer } from "react-toastify";
 const AddStudent = () => {
   const [formData, setFormData] = useState({
     fullName: "",
@@ -44,15 +44,17 @@ const AddStudent = () => {
           "Content-Type": "multipart/form-data",
         },
       });
+      toast.success("تم ارسال الطلب بنجاح ستجد باقي التفاصيل في صفحة طلباتي  :")
       console.log("Student added successfully:", response.data);
     } catch (error) {
+      toast.error(("حدث خطا"));
       console.error("There was an error adding the student:", error);
     }
   };
 
   return (
     <div className="form-container">
-      <h1 className="form-title">  تكليف المؤسسة الناشئة بالبحث لهم عن التكوين الذي يريدونه حسب طلبه والمجال الذي يريد التكوين فيه</h1>
+      <h1 className="form-title">  تكليف المؤسسة الناشئة بعملية البحث عن مجال التكوين المرغوب من المستخدم</h1>
       <form onSubmit={handleSubmit} className="student-form">
         <label>الاسم الكامل:</label>
         <input type="text" name="fullName" placeholder="أدخل الاسم الكامل" value={formData.fullName} onChange={handleChange} required />

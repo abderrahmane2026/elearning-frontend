@@ -31,7 +31,18 @@ const OrdersPage = () => {
     }
   };
 
-
+  const renderStatus = (status) => {
+    switch (status) {
+      case 'pending':
+        return <span className="text-black">طلبك قيد المعالجة</span>;
+      case 'accepted':
+        return <span className="text-green-600">تم قبول طلبك</span>;
+      case 'rejected':
+        return <span className="text-red-600">لقد تم رفض طلبك</span>;
+      default:
+        return <span className="text-gray-600">{status}</span>;
+    }
+  };
 
   return (
     <div className="max-w-screen-xl mx-auto px-4 md:px-8">
@@ -45,10 +56,8 @@ const OrdersPage = () => {
               <tr>
                 <th className="py-3 px-6">الاسم</th>
                 <th className="py-3 px-6">البريد الالكتروني</th>
-
-                
                 <th className="py-3 px-6">وقت الطلب </th>
-                <th className="py-3 px-6"> اختيار</th>
+                <th className="py-3 px-6">اختيار</th>
                 <th className="py-3 px-6">الحالة</th>
                 <th className="py-3 px-6">حذف</th>
               </tr>
@@ -60,15 +69,14 @@ const OrdersPage = () => {
                   <td className="px-6 py-4 whitespace-nowrap">{order.email}</td>
                   <td className="px-6 py-4 whitespace-nowrap">{order.startTime}</td>
                   <td className="px-6 py-4 whitespace-nowrap">{order.nameofchois}</td>
-                  <td className="px-6 py-4 whitespace-nowrap">{order.status}</td>
+                  <td className="px-6 py-4 whitespace-nowrap">{renderStatus(order.status)}</td>
                   <td className="text-right px-6 whitespace-nowrap">
-                  <button
+                    <button
                       onClick={() => handleDelete(order._id)}
                       className="py-2 px-3 font-medium text-red-600 hover:text-red-500 duration-150 hover:bg-gray-50 rounded-lg"
                     >
                       حذف
                     </button>
-                   
                   </td>
                 </tr>
               ))}

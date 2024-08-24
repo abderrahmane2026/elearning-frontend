@@ -89,11 +89,27 @@ const CourseDetailsPage = () => {
       <form onSubmit={handleSubmitOrder} className="order-form">
       <h2>تفاصيل الطلب </h2>
       <div className="form-group">
-          <label>الاسم:</label>
+          <label>الاسم و اللقب:</label>
           <input 
               type="text" 
               value={name} 
               onChange={(e) => setName(e.target.value)} 
+              required 
+          />
+      </div>
+      <div className="form-group">
+          <label> رقم التسجيل:</label>
+          <input 
+              type="number" 
+              
+              required 
+          />
+      </div>
+      <div className="form-group">
+          <label> رقم بطاقة التعريف الوطني:</label>
+          <input 
+              type="number" 
+              
               required 
           />
       </div>
@@ -107,13 +123,24 @@ const CourseDetailsPage = () => {
           />
       </div>
       <div className="form-group">
-          <label>الموقع:</label>
+          <label>العنوان:</label>
           <input 
               type="text" 
               value={address} 
               onChange={(e) => setAddress(e.target.value)} 
               required 
           />
+      </div>
+      <div className="form-group">
+          <label> المستوى الدراسي :</label>
+          <select 
+             
+          >
+              <option >  الابتدائي</option>
+              <option > المتوسط</option>
+              <option >الثانوي</option>
+              <option > الجامعي </option>
+          </select>
       </div>
       <div className="form-group">
           <label>رقم الهاتف:</label>
@@ -138,7 +165,7 @@ const CourseDetailsPage = () => {
           </select>
       </div>
       <div className="form-group">
-          <label> رفع السيرة الذاتية:</label>
+          <label> شهادة عمل + شهادة مستوى الدراسي  :</label>
           <input 
               type="file" 
               onChange={(e) => setCvFile(e.target.files[0])} 

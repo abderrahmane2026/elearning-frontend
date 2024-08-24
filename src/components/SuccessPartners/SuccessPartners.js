@@ -41,7 +41,7 @@ const SuccessPartners = ({ partners }) => {
 
   return (
     <section className="partners-section">
-      <h2>شركاؤنا في النجاح</h2>
+      <h2>  </h2>
       <Slider {...settings} className="partners-slider">
         {partners.map((partner, index) => (
           <div key={index} className="partner-card">

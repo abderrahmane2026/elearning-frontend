@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 import "./CompanyDetailsPage.css";
-
+import { toast, ToastContainer } from "react-toastify";
 const CompanyDetails = () => {
     const { id } = useParams();
     const [company, setCompany] = useState(null);
@@ -60,9 +60,10 @@ const CompanyDetails = () => {
                     'Content-Type': 'multipart/form-data',
                 },
             });
-    
-            alert('Order submitted successfully!');
+            toast.success("تم ارسال الطلب بنجاح ستجد باقي التفاصيل في صفحة طلباتي  :")
+            alert('تم ارسال الطلب بنجاح ستجد باقي التفاصيل في صفحة طلباتي  ' );
         } catch (error) {
+            toast.error(("حدث خطا"));
             alert('Error submitting order: ' + error.message);
         }
     };
@@ -104,68 +105,95 @@ const CompanyDetails = () => {
 
                 {/* نموذج الطلب */}
                 {showOrderForm && (
-     <form onSubmit={handleSubmitOrder} className="order-form">
-     <h2>تفاصيل الطلب </h2>
-     <div className="form-group">
-         <label>الاسم:</label>
-         <input 
-             type="text" 
-             value={name} 
-             onChange={(e) => setName(e.target.value)} 
-             required 
-         />
-     </div>
-     <div className="form-group">
-         <label>البريد الالكتروني:</label>
-         <input 
-             type="email" 
-             value={email} 
-             onChange={(e) => setEmail(e.target.value)} 
-             required 
-         />
-     </div>
-     <div className="form-group">
-         <label>الموقع:</label>
-         <input 
-             type="text" 
-             value={address} 
-             onChange={(e) => setAddress(e.target.value)} 
-             required 
-         />
-     </div>
-     <div className="form-group">
-         <label>رقم الهاتف:</label>
-         <input 
-             type="text" 
-             value={phone} 
-             onChange={(e) => setPhone(e.target.value)} 
-             required 
-         />
-     </div>
-     <div className="form-group">
-         <label>طريقة الدفع :</label>
-         <select 
-             value={paymentMethod} 
-             onChange={(e) => setPaymentMethod(e.target.value)} 
-             required
-         >
-             <option value="">اختر طريقة الدفع</option>
-             <option value="Credit Card">البطاقة البنكية</option>
-             <option value="PayPal">باليد</option>
-             <option value="Bank Transfer">تحويل البنكي </option>
-         </select>
-     </div>
-     <div className="form-group">
-         <label> رفع السيرة الذاتية:</label>
-         <input 
-             type="file" 
-             onChange={(e) => setCvFile(e.target.files[0])} 
-             accept=".pdf,.doc,.docx" // قبول فقط ملفات PDF و Word
-             required 
-         />
-     </div>
-     <button type="submit" className="submit-order-button">ارسال الطلب </button>
- </form>
+      <form onSubmit={handleSubmitOrder} className="order-form">
+      <h2>تفاصيل الطلب </h2>
+      <div className="form-group">
+          <label>الاسم و اللقب:</label>
+          <input 
+              type="text" 
+              value={name} 
+              onChange={(e) => setName(e.target.value)} 
+              required 
+          />
+      </div>
+      <div className="form-group">
+          <label> رقم التسجيل:</label>
+          <input 
+              type="number" 
+              
+              required 
+          />
+      </div>
+      <div className="form-group">
+          <label> رقم بطاقة التعريف الوطني:</label>
+          <input 
+              type="number" 
+              
+              required 
+          />
+      </div>
+      <div className="form-group">
+          <label>البريد الالكتروني:</label>
+          <input 
+              type="email" 
+              value={email} 
+              onChange={(e) => setEmail(e.target.value)} 
+              required 
+          />
+      </div>
+      <div className="form-group">
+          <label>العنوان:</label>
+          <input 
+              type="text" 
+              value={address} 
+              onChange={(e) => setAddress(e.target.value)} 
+              required 
+          />
+      </div>
+      <div className="form-group">
+          <label> المستوى الدراسي :</label>
+          <select 
+             
+          >
+              <option >  الابتدائي</option>
+              <option > المتوسط</option>
+              <option >الثانوي</option>
+              <option > الجامعي </option>
+          </select>
+      </div>
+      <div className="form-group">
+          <label>رقم الهاتف:</label>
+          <input 
+              type="text" 
+              value={phone} 
+              onChange={(e) => setPhone(e.target.value)} 
+              required 
+          />
+      </div>
+      <div className="form-group">
+          <label>طريقة الدفع :</label>
+          <select 
+              value={paymentMethod} 
+              onChange={(e) => setPaymentMethod(e.target.value)} 
+              required
+          >
+              <option value="">اختر طريقة الدفع</option>
+              <option value="Credit Card">البطاقة البنكية</option>
+              <option value="PayPal">باليد</option>
+              <option value="Bank Transfer">تحويل البنكي </option>
+          </select>
+      </div>
+      <div className="form-group">
+          <label> شهادة عمل + شهادة مستوى الدراسي  :</label>
+          <input 
+              type="file" 
+              onChange={(e) => setCvFile(e.target.files[0])} 
+              accept=".pdf,.doc,.docx" // قبول فقط ملفات PDF و Word
+              required 
+          />
+      </div>
+      <button type="submit" className="submit-order-button">ارسال الطلب </button>
+  </form>
 )}
 
             </div>

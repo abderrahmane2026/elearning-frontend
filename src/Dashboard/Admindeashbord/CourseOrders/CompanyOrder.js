@@ -35,6 +35,19 @@ const CompanyOrdersTable = () => {
       alert('Error accepting order: ' + error.message);
     }
   };
+  const handlerejectedOrder = async (orderId) => {
+    try {
+      await axios.put(`https://develop-yourself.onrender.com/api/order/rejected/${orderId}`);
+      setOrders(prevOrders =>
+        prevOrders.map(order =>
+          order._id === orderId ? { ...order, status: 'rejected' } : order
+        )
+      );
+      alert('Order rejected successfully');
+    } catch (error) {
+      alert('Error rejected order: ' + error.message);
+    }
+  };
 
   const handleDeleteOrder = async (orderId) => {
     try {
@@ -88,14 +101,22 @@ const CompanyOrdersTable = () => {
                   onClick={() => handleAcceptOrder(order._id)}
                   className="accept-button"
                 >
-                  Accept
+                  قبول
+                </button>
+              )}
+              {order.status !== 'rejected' && (
+                <button
+                  onClick={() => handlerejectedOrder(order._id)}
+                  className="rejected-button"
+                >
+                  رفض
                 </button>
               )}
               <button
                 onClick={() => handleDeleteOrder(order._id)}
                 className="delete-button"
               >
-                Delete
+                حذف
               </button>
             </td>
           </tr>

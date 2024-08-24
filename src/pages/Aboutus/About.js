@@ -1,7 +1,8 @@
 
 import React, { useState, useEffect } from "react";
 import about from "../../assets/picturs/About us page-bro.png"
-
+import pict1 from "../../assets/persone/IMG-20240824-WA0002.jpg"
+import pict2 from "../../assets/persone/IMG-20240824-WA0004.jpg"
 export default function About() {
     const stats = [
         {
@@ -23,25 +24,25 @@ export default function About() {
     ]
     const team = [
         {
-            avatar: "https://images.unsplash.com/photo-1511485977113-f34c92461ad9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ",
-            name: "Martiana dialan",
-            title: "Product designer",
+            avatar: pict2,
+           
+            title:"استاذة محاضرة ا" ,
             desc: "Lorem Ipsum is simply dummy text of the printing and typesettin industry.",
             linkedin: "javascript:void(0)",
             twitter: "javascript:void(0)",
         },
         {
-            avatar: "https://api.uifaces.co/our-content/donated/xZ4wg2Xj.jpg",
-            name: "Micheal colorand",
-            title: "Software engineer",
+            avatar: pict1,
+            name:"" ,
+            title: "استاذة مساعدة قسم ب",
             desc: "Lorem Ipsum is simply dummy text of the printing and typesettin industry.",
             linkedin: "javascript:void(0)",
             twitter: "javascript:void(0)",
         },
         {
             avatar: "https://randomuser.me/api/portraits/women/79.jpg",
-            name: "Brown Luis",
-            title: "Full stack engineer",
+           
+            title: "استاذة مساعدة قسم ا",
             desc: "Lorem Ipsum is simply dummy text of the printing and typesettin industry.",
             linkedin: "javascript:void(0)",
             twitter: "javascript:void(0)",
@@ -204,6 +205,7 @@ export default function About() {
                         <p className="text-gray-800 text-3xl font-semibold sm:text-4xl">
                         تم انشاء منصة طور نفسك للتعليم والتنمية والتي تحرص على بذل كافة الجهود والمساعي 
                         </p>
+                       
                         <p className="mt-3 text-gray-600">
                         اكتشف
 مجموعة كبيرة ومتنوعة من أكثر الدورات والتخصصات كفاءة وجودة
@@ -227,7 +229,7 @@ export default function About() {
                        فريق العمل
                     </h3>
                     <p className="text-gray-600 mt-3">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy.
+                    أصحاب المؤسسات الناشئة هم الأمل والركيزة الحقيقية لاقتصاد المعرفة في الجزائر، لذلك وجب إعادة دعمهم ودفعهم من جديد من أجل تجديد ثقتهم وايمانهم بالنجاح وذلك من خلال تكوينات في مجالات عديدة تعيد تأهيلهم من جديد لمعالجة النقائص ومواجهة التحديات التي تعرقل ابتكارهم وتقف أمام تطور مؤسساتهم.
                     </p>
                 </div>
                 <div className="mt-12">
