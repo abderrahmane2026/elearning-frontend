@@ -54,7 +54,7 @@ const AddStudent = () => {
 
   return (
     <div className="form-container">
-      <h1 className="form-title">  تكليف المؤسسة الناشئة بعملية البحث عن مجال التكوين المرغوب من المستخدم</h1>
+      <h1 className="form-title">  تكليف المؤسسة بعملية البحث عن  مجال التكوين /التربص المطلوب من المستخدم </h1>
       <form onSubmit={handleSubmit} className="student-form">
         <label>الاسم الكامل:</label>
         <input type="text" name="fullName" placeholder="أدخل الاسم الكامل" value={formData.fullName} onChange={handleChange} required />

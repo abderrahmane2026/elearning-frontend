@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import "./Footer.css"
+import logo from "../../assets/logo/startup logo.jpg"
 export default function Footer() {
 
     const footerNavs = [
@@ -71,7 +72,7 @@ export default function Footer() {
             <div className="gap-6 justify-between md:flex">
                 <div className="flex-1">
                     <div className="max-w-xs">
-                        <img src="https://www.floatui.com/logo.svg" className="w-32" />
+                        <img src={logo} className="w-32" />
                         <p className="leading-relaxed mt-2 text-[15px]">
                            اكتشف فرصا مثيرة وانطلق بمستقبلك الى افاق جديدة.
                         </p>

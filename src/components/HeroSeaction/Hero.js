@@ -11,10 +11,14 @@ export default function Hero() {
                          <span className="text-indigo-600 mt-4"> اختصار الوقت، بيع</span>
                     </h1>
                     <p className="text-gray-500 mt-5 max-w-xl leading-relaxed font-semibold sm:mx-auto lg:ml-0">
-                    عصرنة الادارات من خالال جودة الخدمات الرقمية
-توفري التعليم، التكوين، الرتبص
+                  عصرنة الادارات من خلال جودة الخدمات الرقمية
+                  <br/> 
+توفير التعليم، التكوين، التربص
+<br/> 
 تحسين وتطوير نظام التعلم والتكوين
-اختصار الوقت وتقليص املسافات
+<br/> 
+اختصار الوقت وتقليص امسافات
+<br/> 
 بيع دورات تدريبية وتعليمية                     </p>
                     <div>
                         <p className="text-gray-800 py-3 text-lg font-semibold">

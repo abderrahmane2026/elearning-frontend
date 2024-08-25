@@ -73,7 +73,7 @@ export default function LoginPage() {
             <small
               className="text-wrap text-center"
               style={{ width: "17rem", color: "black" }}
-             >  مرحبا بك، في لمنصة طور نفسك ........واصنع مستقبلك معنا انت في امان  
+             >  مرحبا بك، في لمنصة طور نفسك ........واصنع مستقبلك  انت معنا في امان  
              </small>
           </div>
           {/* Right Box */}

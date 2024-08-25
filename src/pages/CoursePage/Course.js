@@ -91,6 +91,7 @@ const CoursesPage = () => {
 
 
                 <h1>عرض جميع الدورات التدريبية</h1>
+
   <div className="courses-grid">
     {courses.map(course => (
       <CourseCard key={course._id} course={course} /> // Use CourseCard component
@@ -110,6 +111,8 @@ const CoursesPage = () => {
       شركاؤنا في                
        <span className="text-indigo-600 mt-4">  النجاح</span>
                 </h1>
+
+                <p className="text-gray-700 py-2 text-lg font-semibold">المؤسسات ومراكز التدريب المتعاونة مع منصة طور نفسك </p>
       <SuccessPartners partners={partnersData} />
 
       <p className="text-gray-700 py-2 text-lg font-semibold">

@@ -46,13 +46,13 @@ const AddStudent = () => {
       console.log("Student added successfully:", response.data);
     } catch (error) {
       toast.error(("حدث خطا"));
-      console.error("There was an error adding the student:", error);
+      console.error("There was an error adding the student:", error)
     }
   };
 
   return (
     <div className="form-container">
-      <h1 className="form-title"> التربص في المؤسسات المرغوبة من طرف المستخدم </h1>
+      <h1 className="form-title"> تاكيد المنصة قبول التربص / التكوين عند المؤسسة المرغوبة من المستخدم</h1>
       <form onSubmit={handleSubmit} className="student-form">
         <label>الاسم الكامل:</label>
         <input type="text" name="fullName" placeholder="أدخل الاسم الكامل" value={formData.fullName} onChange={handleChange} required />

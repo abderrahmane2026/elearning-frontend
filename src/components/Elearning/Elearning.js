@@ -44,7 +44,7 @@ export default () => {
                         تحسين المستوى
                     </Link>
                     <Link to="/Courses" className="px-10 py-3.5 w-full text-gray-500 text-center border rounded-md duration-300 hover:text-indigo-600 hover:shadow block sm:w-auto">
-                       تعلم الذاتي
+                        تعلم الذاتي المستمر
                     </Link>
                 </div>
             </section>

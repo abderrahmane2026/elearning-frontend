@@ -63,7 +63,7 @@ export default function SignupPage() {
               <img src={loginpic} className="img-fluid" style={{ width: '250px' }} alt="logo" />
             </div>
             <p className="fs-2" style={{ fontWeight: 700, color: "#000000" }}>أنشئ حسابك مجانا</p>
-            <small className="text-wrap text-center" style={{ width: '17rem', color: 'black' }}>مرحبا بك، في لمنصة طور نفسك ........واصنع مستقبلك معنا انت في امان</small>
+            <small className="text-wrap text-center" style={{ width: '17rem', color: 'black' }}>مرحبا بك، في لمنصة طور نفسك ........واصنع مستقبلك  انت معنا في امان</small>
           </div>
           <div className="col-md-6 right-box">
             <div className="row align-items-center">
@@ -131,7 +131,8 @@ export default function SignupPage() {
                     onChange={handlePrivacyCheck}
                   />
                   <label htmlFor="privacyCheck" className="form-check-label text-secondary ms-2">
-                    <small>أوافق على <Link to="/privacy-policy" style={{textDecoration:"none", color:"rgb(79, 70, 229)"}}>سياسة الخصوصية</Link></small>
+                    <small>أوافق على <Link to="/privacy-policy" style={{textDecoration:"none", color:"rgb(79, 70, 229)"}} >سياسة الخصوصية </Link></small>
+                    و شروط الخدمة
                   </label>
                 </div>
 
