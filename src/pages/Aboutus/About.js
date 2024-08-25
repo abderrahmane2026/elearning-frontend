@@ -25,7 +25,7 @@ export default function About() {
     const team = [
         {
             avatar: pict2,
-           
+            name:"زرق الله حنان",
             title:"استاذة محاضرة ا" ,
             desc: "Lorem Ipsum is simply dummy text of the printing and typesettin industry.",
             linkedin: "javascript:void(0)",
@@ -33,7 +33,7 @@ export default function About() {
         },
         {
             avatar: pict1,
-            name:"" ,
+            name:"بن سالم ايمان" ,
             title: "استاذة مساعدة قسم ب",
             desc: "Lorem Ipsum is simply dummy text of the printing and typesettin industry.",
             linkedin: "javascript:void(0)",
@@ -41,7 +41,7 @@ export default function About() {
         },
         {
             avatar: "https://randomuser.me/api/portraits/women/79.jpg",
-           
+            name:"بن زقوطة نور الهدى",
             title: "استاذة مساعدة قسم ا",
             desc: "Lorem Ipsum is simply dummy text of the printing and typesettin industry.",
             linkedin: "javascript:void(0)",
