@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import pict from "../../assets/picturs/Team goals-cuate.png"
+
 export default function Hero() {
   return (
     <>
@@ -34,7 +36,7 @@ export default function Hero() {
                     </div>
                 </div>
                 <div className="flex-1 text-center mt-4 lg:mt-0 lg:ml-3">
-                    <img src="https://i.postimg.cc/kgd4WhyS/container.png" className="w-full mx-auto sm:w-10/12  lg:w-full" />
+                    <img src={pict} className="w-full mx-auto sm:w-10/12  lg:w-full" />
                 </div>
                 
             </section>

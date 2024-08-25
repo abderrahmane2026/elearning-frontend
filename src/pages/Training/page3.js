@@ -2,6 +2,12 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./page3.css"; // Import the CSS file for styling
 import { toast, ToastContainer } from "react-toastify";
+
+import Modal from "react-modal"; // Import Modal
+
+Modal.setAppElement('#root'); // Set the root element for accessibility
+
+
 const AddStudent = () => {
   const [formData, setFormData] = useState({
     fullName: "",
@@ -18,6 +24,7 @@ const AddStudent = () => {
     institutionAddress: "",
     cv: null,
   });
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -49,7 +56,17 @@ const AddStudent = () => {
       console.error("There was an error adding the student:", error)
     }
   };
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
 
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+  const [selectedOption, setSelectedOption] = useState('option1');
+  const handleOptionChange = (event) => {
+    setSelectedOption(event.target.value);
+  };
   return (
     <div className="form-container">
       <h1 className="form-title"> تاكيد المنصة قبول التربص / التكوين عند المؤسسة المرغوبة من المستخدم</h1>
@@ -99,17 +116,65 @@ const AddStudent = () => {
           <option value="مواطن حر">مواطن حر</option>
         </select>
 
+        <div>
+        <label>
+        <input
+          type="radio"
+          name="options"
+          value="option1"
+          checked={selectedOption === 'option1'}
+          onChange={handleOptionChange}
+        />
+         تربص ميداني
+      </label>
+      <br />
+      <label>
+        <input
+          type="radio"
+          name="options"
+          value="option2"
+          checked={selectedOption === 'option2'}
+          onChange={handleOptionChange}
+        />
+         تكوين
+      </label>
+      </div>
+      
         <label>اسم المؤسسة:</label>
         <input type="text" name="institutionName" placeholder="أدخل اسم المؤسسة" value={formData.institutionName} onChange={handleChange} />
 
         <label>تفاصيل المؤسسة :</label>
         <input type="text" name="institutionAddress" placeholder="أدخل عنوان المؤسسة" value={formData.institutionAddress} onChange={handleChange} />
 
-        <label>السيرة الذاتية:</label>
+        <label>الملف المطلوب : <button type="button" onClick={openModal} className="note-button">ملاحظة</button></label>
         <input type="file" name="cv" onChange={handleFileChange} required />
 
         <button type="submit" className="submit-button">إضافة الطالب</button>
       </form>
+
+      {/* Modal for the note */}
+      <Modal
+        isOpen={isModalOpen}
+        onRequestClose={closeModal}
+        contentLabel="Note Modal"
+        className="note-modal"
+        overlayClassName="note-modal-overlay"
+      >
+        <h2>ملاحظات:</h2>
+        <p>-إرسال شهادة البطالة  + إرسال تصريح شرفي يثبث الهدف من طلب إجراء التربص وفي أي غرض سيقوم به ممضية من طرفه ومختوم عليها من الجهات المعنية مثلا البلدية التابعة لمقر سكنه .
++شهادة سابقة تثبت تكوينه في نفس المجال ان وجدت+إرسال شهادة تثبت مستواه الدراسي بصيغة PDF). ...(بالنسبة للعاطلين عن العمل).
+- شهادة عمل + la convention + la demande de stage بالمعلومات المتوفرة في المنصة عن المؤسسة المختارة للتربص فيها مختومة مختومة وممضية من طرف المدير أو المسؤول عن المؤسسة المرخصة له بالقيام بالتربص ان وجدت او تصريح شرفي يثبث الهدف من طلب إجراء التربص وفي أي غرض سيقوم به ممضية من طرفه ومختوم عليها من الجهات المعنية مثلا البلدية التابعة لمقر سكنه او من طرف مديره + إ شهادة تثبت تكوينه في نفس المجال ان وجدت +ارسال شهادة تثبت مستواه الدراسي بصيغة PDF……(بالنسبة للأستاذ أو الموظف)
+- إرسال تصريح شرفي يثبث الهدف من طلب إجراء التربص وفي أي غرض سيقوم به ممضية من طرفه ومختوم عليها من الجهات المعنية مثلا البلدية+ شهادة تثبت تكوينه في نفس المجال ان وجدت إرسال شهادة تثبت مستواه الدراسي بصيغة PDF...... (مواطن حر) .
+- إرسال (بالنسبة للطالب او المتمهن) :  la demande de stage  +la convention  بالمعلومات المتوفرة في المنصة عن المؤسسة المراد التربص عندها مختومة وممضية من طرف المدير أو المسؤول عن المؤسسة المرخصة له بالقيام بالتربص + شهادة تثبت تكوينه في نفس المجال ان وجدت +شهادة تثيت مستواه الدراسيpdf.
+- شهادة عمل + la convention ou la demande de stageمختومة وممضية من طرف المدير أو المسؤول عن المؤسسة المرخصة له بالقيام بالتربص ان وجدت او تصريح شرفي يثبث الهدف من طلب إجراء التربص وفي أي غرض سيقوم به ممضية من طرفه ومختوم عليها من الجهات المعنية + شهادة تثبت تكوينه في نفس المجال ان وجدت......(اذا كان دون المستوى وبعمل).
+- يقوم بإرسال تصريح شرفي يثبث الهدف من طلب إجراء التربص وفي أي غرض سيقوم به ممضية من طرفه ومختوم عليها من الجهات المعنية مثلا البلدية التابعة لمقر سكنه أو المصلحة التي يعمل عندها+شهادة تثبت تكوينه في نفس المجال ان وجدت.......دون مستوى
+
+</p>
+        {/* Add all other points here */}
+        <button onClick={closeModal} className="close-modal-button">إغلاق</button>
+      </Modal>
+
+      <ToastContainer />
     </div>
   );
 };

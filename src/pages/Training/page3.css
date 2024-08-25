@@ -57,3 +57,43 @@
 .submit-button:hover {
   background-color: #0056b3;
 }
+.note-modal {
+  position:absolute;
+  top: 120%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 600px;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  outline: none;
+}
+
+.note-modal-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.note-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.close-modal-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
