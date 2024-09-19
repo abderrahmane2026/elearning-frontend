@@ -8,7 +8,7 @@ export default function JobApplicationsList() {
   useEffect(() => {
     const fetchJobApplications = async () => {
       try {
-        const response = await axios.get("https://develop-yourself.onrender.com/api/job-application");
+        const response = await axios.get("http://localhost:5000/api/job-application");
         setJobApplications(response.data);
       } catch (error) {
         console.error("Error fetching job applications", error);
@@ -44,7 +44,7 @@ export default function JobApplicationsList() {
                 <td>{application.email}</td>
                 <td>{application.specialization}</td>
                 <td>
-                  <a href={`https://develop-yourself.onrender.com/${application.cv}`} target="_blank" rel="noopener noreferrer">
+                  <a href={`http://localhost:5000/${application.cv}`} target="_blank" rel="noopener noreferrer">
                     تحميل
                   </a>
                 </td>

@@ -14,7 +14,7 @@ const ReviewPage = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('https://develop-yourself.onrender.com/api/reviews', { name, rating, comment });
+      const response = await axios.post('http://localhost:5000/api/reviews', { name, rating, comment });
       setMessage('تم إرسال رأيك بنجاح!');
       setName('');
       setRating(0);

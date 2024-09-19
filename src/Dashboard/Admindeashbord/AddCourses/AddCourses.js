@@ -23,7 +23,7 @@ const AddCourse = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('https://develop-yourself.onrender.com/api/courses', course);
+      await axios.post('http://localhost:5000/api/courses', course);
       
       toast.success('تم إضافة الكورس بنجاح!');
       setTimeout(() => navigate("/Courses"), 2000);

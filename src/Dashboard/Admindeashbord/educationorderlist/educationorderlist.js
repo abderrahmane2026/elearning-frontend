@@ -9,7 +9,7 @@ const RequestsList = () => {
         // جلب الطلبات من الخادم عند تحميل الصفحة
         const fetchRequests = async () => {
             try {
-                const response = await axios.get('https://develop-yourself.onrender.com/api/educationorder');
+                const response = await axios.get('http://localhost:5000/api/educationorder');
                 setRequests(response.data);
             } catch (error) {
                 console.error('Error fetching requests', error);
@@ -22,7 +22,7 @@ const RequestsList = () => {
     // قبول الطلب
     const acceptRequest = async (id) => {
         try {
-            await axios.put(`https://develop-yourself.onrender.com/api/educationorder/${id}`, { status: 'accepted' });
+            await axios.put(`http://localhost:5000/api/educationorder/${id}`, { status: 'accepted' });
             setRequests(requests.map(request => request._id === id ? { ...request, status: 'accepted' } : request));
         } catch (error) {
             console.error('Error accepting request', error);
@@ -32,7 +32,7 @@ const RequestsList = () => {
     // رفض الطلب
     const rejectRequest = async (id) => {
         try {
-            await axios.put(`https://develop-yourself.onrender.com/api/educationorder/${id}`, { status: 'rejected' });
+            await axios.put(`http://localhost:5000/api/educationorder/${id}`, { status: 'rejected' });
             setRequests(requests.map(request => request._id === id ? { ...request, status: 'rejected' } : request));
         } catch (error) {
             console.error('Error rejecting request', error);
@@ -42,7 +42,7 @@ const RequestsList = () => {
     // حذف الطلب
     const deleteRequest = async (id) => {
         try {
-            await axios.delete(`https://develop-yourself.onrender.com/api/educationorder/${id}`);
+            await axios.delete(`http://localhost:5000/api/educationorder/${id}`);
             setRequests(requests.filter(request => request._id !== id));
         } catch (error) {
             console.error('Error deleting request', error);

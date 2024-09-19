@@ -10,7 +10,7 @@ const CourseOrdersTable = () => {
   useEffect(() => {
     const fetchCourseOrders = async () => {
       try {
-        const response = await axios.get('https://develop-yourself.onrender.com/api/order/course-orders');
+        const response = await axios.get('http://localhost:5000/api/order/course-orders');
         setOrders(response.data);
         setLoading(false);
       } catch (error) {
@@ -24,7 +24,7 @@ const CourseOrdersTable = () => {
 
   const handleAcceptOrder = async (orderId) => {
     try {
-      await axios.put(`https://develop-yourself.onrender.com/api/order/accept/${orderId}`);
+      await axios.put(`http://localhost:5000/api/order/accept/${orderId}`);
       setOrders(prevOrders =>
         prevOrders.map(order =>
           order._id === orderId ? { ...order, status: 'accepted' } : order
@@ -38,7 +38,7 @@ const CourseOrdersTable = () => {
 
   const handleDeleteOrder = async (orderId) => {
     try {
-      await axios.delete(`https://develop-yourself.onrender.com/api/order/delete/${orderId}`);
+      await axios.delete(`http://localhost:5000/api/order/delete/${orderId}`);
       setOrders(prevOrders => prevOrders.filter(order => order._id !== orderId));
       alert('Order deleted successfully');
     } catch (error) {

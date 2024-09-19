@@ -27,7 +27,7 @@ const NewCompanyForm = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post('https://develop-yourself.onrender.com/api/companies', formData);
+            const response = await axios.post('http://localhost:5000/api/companies', formData);
             console.log('Company created:', response.data);
             alert('تمت إضافة الشركة بنجاح!');
             // مسح النموذج بعد الإرسال

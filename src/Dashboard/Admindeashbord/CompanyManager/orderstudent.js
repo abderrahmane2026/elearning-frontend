@@ -10,7 +10,7 @@ const AllStudents = () => {
   useEffect(() => {
     const fetchStudents = async () => {
       try {
-        const response = await axios.get("https://develop-yourself.onrender.com/api/form/");
+        const response = await axios.get("http://localhost:5000/api/form/");
         setStudents(response.data);
         setLoading(false);
       } catch (err) {
@@ -24,7 +24,7 @@ const AllStudents = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://develop-yourself.onrender.com/api/form/${id}`);
+      await axios.delete(`http://localhost:5000/api/form/${id}`);
       setStudents(students.filter((student) => student._id !== id));
       alert("تم حذف الطالب بنجاح");
     } catch (err) {
@@ -68,7 +68,7 @@ const AllStudents = () => {
               <td>{student.institutionName}</td>
               <td>{student.institutionAddress}</td>
               <td>
-                <a href={`https://develop-yourself.onrender.com/uploads/${student.cv}`} download>
+                <a href={`http://localhost:5000/uploads/${student.cv}`} download>
                   تحميل السيرة الذاتية
                 </a>
               </td>

@@ -9,7 +9,7 @@ const Users = () => {
 
   useEffect(() => {
     axios
-      .get("https://develop-yourself.onrender.com/api/user")
+      .get("http://localhost:5000/api/user")
       .then((response) => {
         setUsers(response.data);
         setLoading(false);
@@ -27,7 +27,7 @@ const Users = () => {
     if (!confirmDelete) return;
 
     try {
-      await axios.delete(`https://develop-yourself.onrender.com/api/user/${userId}`);
+      await axios.delete(`http://localhost:5000/api/user/${userId}`);
       // Filter out the deleted user from the state
       setUsers(users.filter((user) => user._id !== userId));
       alert("User deleted successfully!");

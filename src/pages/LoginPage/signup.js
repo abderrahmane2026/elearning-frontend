@@ -37,7 +37,7 @@ export default function SignupPage() {
     setLoading(true);
 
     try {
-      await axios.post("https://develop-yourself.onrender.com/api/user/signup", values);
+      await axios.post("http://localhost:5000/api/user/signup", values);
       setLoading(false);
       navigate("/Login", { replace: true });
     } catch (err) {
@@ -120,6 +120,7 @@ export default function SignupPage() {
                   >
                     <option value="client">عميل</option>
                     <option value="Mr">استاذ</option>
+                    <option value="companny">مؤسسة</option>
                   </select>
                 </div>
 

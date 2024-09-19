@@ -12,7 +12,7 @@ const CompaniesSelection = () => {
     useEffect(() => {
         const fetchCompanies = async () => {
             try {
-                const response = await axios.get('https://develop-yourself.onrender.com/api/companies');
+                const response = await axios.get('http://localhost:5000/api/companies');
                 setCompanies(response.data);
                 setLoading(false);
             } catch (err) {
@@ -30,7 +30,7 @@ const CompaniesSelection = () => {
 
     const handleDeleteCompany = async (id) => {
         try {
-            await axios.delete(`https://develop-yourself.onrender.com/api/companies/${id}`);
+            await axios.delete(`http://localhost:5000/api/companies/${id}`);
             setCompanies(companies.filter((company) => company._id !== id));
         } catch (err) {
             console.error('Error deleting company:', err);
@@ -51,9 +51,10 @@ const CompaniesSelection = () => {
             <table className="companies-table">
                 <thead>
                     <tr>
-                        <th>Logo</th>
-                        <th>Name</th>
-                        <th>Address</th>
+                        <th>الشعار</th>
+                        <th>الاسم</th>
+                        <th>الموقع</th>
+                        <th>التعاقد</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -65,6 +66,7 @@ const CompaniesSelection = () => {
                             </td>
                             <td>{company.name}</td>
                             <td>{company.address}</td>
+                            <td>{company.contracted ? 'متعاقدة' : 'غير متعاقدة'}</td> {/* Display based on contracted value */}
                             <td>
                                 <button onClick={() => handleSelectCompany(company._id)}>
                                     Select

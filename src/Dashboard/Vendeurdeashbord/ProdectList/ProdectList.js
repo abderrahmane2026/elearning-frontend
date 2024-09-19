@@ -13,7 +13,7 @@ export default function ProductList() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch(`https://develop-yourself.onrender.com/api/products/seller/${sellerId}`);
+        const response = await fetch(`http://localhost:5000/api/products/seller/${sellerId}`);
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
@@ -37,7 +37,7 @@ export default function ProductList() {
 
   const handleDelete = async (productId) => {
     try {
-      await axios.delete(`https://develop-yourself.onrender.com/api/products/delete/${productId}`);
+      await axios.delete(`http://localhost:5000/api/products/delete/${productId}`);
       toast.success("product_delet_success");
       setProducts(products.filter((product) => product._id !== productId));
     

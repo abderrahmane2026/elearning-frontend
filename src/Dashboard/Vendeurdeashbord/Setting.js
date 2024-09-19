@@ -15,7 +15,7 @@ export default function Settings() {
     e.preventDefault();
 
     try {
-      const response = await fetch(`https://develop-yourself.onrender.com/api/user/${userId}/updateProfile`, {
+      const response = await fetch(`http://localhost:5000/api/user/${userId}/updateProfile`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -37,7 +37,7 @@ export default function Settings() {
   const handleChangePassword = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`https://develop-yourself.onrender.com/api/user/${userId}/updatePassword`, {
+      const response = await fetch(`http://localhost:5000/api/user/${userId}/updatePassword`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

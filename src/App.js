@@ -34,6 +34,7 @@ import CourseOrders from './Dashboard/Admindeashbord/CourseOrders/CourseOrders';
 import CompanyOrdersTable from './Dashboard/Admindeashbord/CourseOrders/CompanyOrder';
 import CreateForm1 from './pages/Training/page3';
 import CreateForm2 from './pages/Training/page4';
+import CreateForm3 from './pages/Training/page5';
 import RequestStudent from './Dashboard/Admindeashbord/CompanyManager/orderstudent';
 import CreateLecturePage from './Dashboard/Admindeashbord/AddLecture/AddLecture';
 import LectureDetailsPage from './components/Lectures/LecturesDetailsPage';
@@ -74,6 +75,7 @@ function App() {
         <Route path="page2" element={<CompaniesList2 />} />
         <Route path="page3" element={<CreateForm1 />} />
         <Route path="page4" element={<CreateForm2 />} />
+        <Route path="page5" element={<CreateForm3 />} />
         
         </Route>
 
@@ -101,9 +103,11 @@ function App() {
         <Route path='/Dashboard/' element={
          user?.role === 'Mr' ? <Mrdeashbord/> :
           user?.role === 'client' ? <Userdashbord/> :
+          user?.role === 'companny' ? <Userdashbord/> :
           user?.role === 'admin' ? <Admindeashbord/> :
           <LoginPage/>
         }>
+          
           
           <Route index element={<AccountPage />} />
 

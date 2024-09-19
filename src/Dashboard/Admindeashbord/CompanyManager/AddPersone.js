@@ -13,7 +13,7 @@ const AddPersonToCompany = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post(`https://develop-yourself.onrender.com/api/companies/${id}/people`, {
+            await axios.post(`http://localhost:5000/api/companies/${id}/people`, {
                 name,
                 email,
             });

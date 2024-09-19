@@ -41,7 +41,7 @@ const AccountPage = () => {
         formDataToSend.append(key, formData[key]);
       }
       const response = await fetch(
-        `https://develop-yourself.onrender.com/api/user/${userData._id}/updateUserProfile`,
+        `http://localhost:5000/api/user/${userData._id}/updateUserProfile`,
         {
           method: "PUT",
           body: formDataToSend,

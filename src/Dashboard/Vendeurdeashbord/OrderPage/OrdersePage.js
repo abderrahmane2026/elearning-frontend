@@ -12,7 +12,7 @@ const OrdersPage = () => {
       if (!sellerId) return;
       
       try {
-        const response = await axios.get(`https://develop-yourself.onrender.com/api/order/seller/${sellerId}`);
+        const response = await axios.get(`http://localhost:5000/api/order/seller/${sellerId}`);
         setOrders(response.data);
       } catch (error) {
         console.error("Error fetching orders:", error);
@@ -25,7 +25,7 @@ const OrdersPage = () => {
 
   const handleDelete = async (orderId) => {
     try {
-      await axios.put(`https://develop-yourself.onrender.com/api/order/delete/${orderId}`);
+      await axios.put(`http://localhost:5000/api/order/delete/${orderId}`);
       setOrders(orders.filter((order) => order._id !== orderId));
     } catch (error) {
       console.error("Error deleting order:", error);
@@ -34,7 +34,7 @@ const OrdersPage = () => {
 
   const handleAccept = async (orderId) => {
     try {
-      const response = await axios.put(`https://develop-yourself.onrender.com/api/order/accept/${orderId}`);
+      const response = await axios.put(`http://localhost:5000/api/order/accept/${orderId}`);
       setOrders(
         orders.map((order) =>
           order._id === orderId ? { ...order, status: response.data.status } : order

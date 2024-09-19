@@ -12,7 +12,7 @@ const CompaniesList1 = () => {
     useEffect(() => {
         const fetchCompanies = async () => {
             try {
-                const response = await axios.get('https://develop-yourself.onrender.com/api/companies');
+                const response = await axios.get('http://localhost:5000/api/companies');
                 const contractedCompanies = response.data.filter(company => company.contracted); // تصفية الشركات المتعاقدة
                 setCompanies(contractedCompanies);
                 setLoading(false);

@@ -37,7 +37,7 @@ const AddLecture = () => {
         };
 
         try {
-            const response = await axios.post('https://develop-yourself.onrender.com/api/lectures', newLecture);
+            const response = await axios.post('http://localhost:5000/api/lectures', newLecture);
             console.log('Lecture created:', response.data);
             // قم بإعادة توجيه المستخدم أو عرض رسالة تأكيد
         } catch (error) {
@@ -168,7 +168,7 @@ const AddLecture = () => {
                             />
                         </div>
                         <div className="form-group">
-                            <label>تعريف المحاضر:</label>
+                            <label> التخصص و عنوان المحاضرة:</label>
                             <textarea
                                 value={lecturer.bio}
                                 onChange={(e) => handleLecturerChange(index, 'bio', e.target.value)}
