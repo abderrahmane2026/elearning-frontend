@@ -46,7 +46,7 @@ const AddStudent = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:5000/api/form", data, {
+      const response = await axios.post("https://develop-yourself.onrender.com/api/form", data, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

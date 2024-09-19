@@ -10,7 +10,7 @@ const ServiceControl = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/products");
+        const response = await axios.get("https://develop-yourself.onrender.com/api/products");
         setProducts(response.data);
       } catch (error) {
         console.error("error fetching data", error);
@@ -21,7 +21,7 @@ const ServiceControl = () => {
   }, []);
   const handleDelete = async (productId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/products/delete/${productId}`);
+      await axios.delete(`https://develop-yourself.onrender.com/api/products/delete/${productId}`);
       setProducts(products.filter((product) => product._id !== productId));
     } catch (error) {
       console.error("Error deleting product:", error);

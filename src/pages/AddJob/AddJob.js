@@ -37,7 +37,7 @@ export default function AddJob() {
     formData.append("cv", values.cv);
   
     try {
-      await axios.post("http://localhost:5000/api/job-application", formData); // Ensure the URL is correct
+      await axios.post("https://develop-yourself.onrender.com/api/job-application", formData); // Ensure the URL is correct
       setLoading(false);
       setMessage("تم تقديم الطلب بنجاح!");
     } catch (err) {

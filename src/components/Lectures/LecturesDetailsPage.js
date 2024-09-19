@@ -35,7 +35,7 @@ export default function LectureDetailsPage() {
   useEffect(() => {
     const fetchLectureDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/lectures/${id}`);
+        const response = await axios.get(`https://develop-yourself.onrender.com/api/lectures/${id}`);
         setLecture(response.data);
         setLoading(false);
       } catch (error) {
@@ -62,7 +62,7 @@ export default function LectureDetailsPage() {
         formData.append('nameofchois', lecture.title);
         formData.append('cv', cvFile); // إضافة ملف السيرة الذاتية إلى FormData
 
-        await axios.post('http://localhost:5000/api/order/submit', formData, {
+        await axios.post('https://develop-yourself.onrender.com/api/order/submit', formData, {
             headers: {
                 'Content-Type': 'multipart/form-data',
             },

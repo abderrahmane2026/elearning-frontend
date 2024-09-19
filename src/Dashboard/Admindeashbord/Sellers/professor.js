@@ -9,7 +9,7 @@ const Mr = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/user")
+      .get("https://develop-yourself.onrender.com/api/user")
       .then((response) => {
         const sellers = response.data.filter((user) => user.role === "Mr");
         setSellers(sellers);
@@ -24,7 +24,7 @@ const Mr = () => {
   const handleAccept = async (userId) => {
     if (window.confirm("Are you sure you want to accept this Professor?")) {
       try {
-        await axios.put(`http://localhost:5000/api/user/${userId}/accept`);
+        await axios.put(`https://develop-yourself.onrender.com/api/user/${userId}/accept`);
         setSellers(
           sellers.map((seller) =>
             seller._id === userId
@@ -41,7 +41,7 @@ const Mr = () => {
   const handleRefuse = async (userId) => {
     if (window.confirm("Are you sure you want to refuse this Professer?")) {
       try {
-        await axios.put(`http://localhost:5000/api/user/${userId}/refuse`);
+        await axios.put(`https://develop-yourself.onrender.com/api/user/${userId}/refuse`);
         setSellers(
           sellers.map((seller) =>
             seller._id === userId

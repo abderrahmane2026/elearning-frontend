@@ -10,7 +10,7 @@ const LecturesSelection = () => {
     useEffect(() => {
         const fetchLectures = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/lectures');
+                const response = await axios.get('https://develop-yourself.onrender.com/api/lectures');
                 setLectures(response.data);
                 setLoading(false);
             } catch (err) {
@@ -24,7 +24,7 @@ const LecturesSelection = () => {
 
     const handleDeleteLecture = async (id) => {
         try {
-            await axios.delete(`http://localhost:5000/api/lectures/${id}`);
+            await axios.delete(`https://develop-yourself.onrender.com/api/lectures/${id}`);
             setLectures(lectures.filter((lecture) => lecture._id !== id));
         } catch (err) {
             console.error('Error deleting lecture:', err);

@@ -52,7 +52,7 @@ const CompanyDetails = () => {
         }
     
         try {
-          const response = await axios.post("http://localhost:5000/api/form", data, {
+          const response = await axios.post("https://develop-yourself.onrender.com/api/form", data, {
             headers: {
               "Content-Type": "multipart/form-data",
             },
@@ -97,7 +97,7 @@ const CompanyDetails = () => {
     useEffect(() => {
         const fetchCompany = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/api/companies/${id}`);
+                const response = await axios.get(`https://develop-yourself.onrender.com/api/companies/${id}`);
                 setCompany(response.data);
                 setLoading(false);
             } catch (err) {
@@ -126,7 +126,7 @@ const CompanyDetails = () => {
           
            
     
-            await axios.post('http://localhost:5000/api/order/submit', formData, {
+            await axios.post('https://develop-yourself.onrender.com/api/order/submit', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },

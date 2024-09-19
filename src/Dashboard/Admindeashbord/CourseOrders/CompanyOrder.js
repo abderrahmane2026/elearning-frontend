@@ -10,7 +10,7 @@ const CompanyOrdersTable = () => {
   useEffect(() => {
     const fetchCompanyOrders = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/order/company-orders');
+        const response = await axios.get('https://develop-yourself.onrender.com/api/order/company-orders');
         setOrders(response.data);
         setLoading(false);
       } catch (error) {
@@ -24,7 +24,7 @@ const CompanyOrdersTable = () => {
 
   const handleAcceptOrder = async (orderId) => {
     try {
-      await axios.put(`http://localhost:5000/api/order/accept/${orderId}`);
+      await axios.put(`https://develop-yourself.onrender.com/api/order/accept/${orderId}`);
       setOrders(prevOrders =>
         prevOrders.map(order =>
           order._id === orderId ? { ...order, status: 'accepted' } : order
@@ -37,7 +37,7 @@ const CompanyOrdersTable = () => {
   };
   const handlerejectedOrder = async (orderId) => {
     try {
-      await axios.put(`http://localhost:5000/api/order/rejected/${orderId}`);
+      await axios.put(`https://develop-yourself.onrender.com/api/order/rejected/${orderId}`);
       setOrders(prevOrders =>
         prevOrders.map(order =>
           order._id === orderId ? { ...order, status: 'rejected' } : order
@@ -51,7 +51,7 @@ const CompanyOrdersTable = () => {
 
   const handleDeleteOrder = async (orderId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/order/delete/${orderId}`);
+      await axios.delete(`https://develop-yourself.onrender.com/api/order/delete/${orderId}`);
       setOrders(prevOrders => prevOrders.filter(order => order._id !== orderId));
       alert('Order deleted successfully');
     } catch (error) {
@@ -90,7 +90,7 @@ const CompanyOrdersTable = () => {
             <td>
               
               {order.cv && (
-                <a href={`http://localhost:5000/${order.cv}`} download>
+                <a href={`https://develop-yourself.onrender.com/${order.cv}`} download>
                   Download CV
                 </a>
               )}

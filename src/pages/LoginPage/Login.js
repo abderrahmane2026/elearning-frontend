@@ -30,7 +30,7 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
-      const { data } = await axios.post("http://localhost:5000/api/user/login", values);
+      const { data } = await axios.post("https://develop-yourself.onrender.com/api/user/login", values);
       setLoading(false);
       window.localStorage.setItem("userr", JSON.stringify(data.user));
       navigate("/");

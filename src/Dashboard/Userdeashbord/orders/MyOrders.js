@@ -11,7 +11,7 @@ const OrdersPage = () => {
       if (!userId) return;
       
       try {
-        const response = await axios.get(`http://localhost:5000/api/order/user/${userId}`);
+        const response = await axios.get(`https://develop-yourself.onrender.com/api/order/user/${userId}`);
         setOrders(response.data);
       } catch (error) {
         console.error("Error fetching orders:", error);
@@ -24,7 +24,7 @@ const OrdersPage = () => {
 
   const handleDelete = async (orderId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/order/delete/${orderId}`);
+      await axios.delete(`https://develop-yourself.onrender.com/api/order/delete/${orderId}`);
       setOrders(orders.filter((order) => order._id !== orderId));
     } catch (error) {
       console.error("Error deleting order:", error);

@@ -15,7 +15,7 @@ export default function Contact() {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:5000/api/contact/submit", {
+      await axios.post("https://develop-yourself.onrender.com/api/contact/submit", {
         name,
         email,
         subject,

@@ -19,7 +19,7 @@ const EducationOrder = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/api/EducationOrder', formData);
+            const response = await axios.post('https://develop-yourself.onrender.com/api/EducationOrder', formData);
             console.log(response.data);
             alert('Request submitted successfully');
             
